@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [PlaceAnOrder]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="checkout(failed)">
+    <classes>
+      <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
+        <methods>
+          <include name="enterPaymentDetails"/>
+          <include name="selectPaymentOption"/>
+        </methods>
+      </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
+    </classes>
+  </test> <!-- checkout(failed) -->
+</suite> <!-- Failed suite [PlaceAnOrder] -->

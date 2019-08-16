@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PlaceAnOrder">
+<!--  	The test for all the user log-in till landing page -->
+
+<test name="open-browser">
+  		<parameter name="browser" value="mozila"/>
+	  	<parameter name="url" value="qa" />		
+	  	<classes>
+	  		<class name="TestMethods.OpenBrowser"/>	
+	    </classes>
+  </test>
+  
+ <test name="log-in">	
+	  	<classes>
+	  		<class name="Login.TestCases.Login"/>	
+	    </classes>
+ </test>
+ 
+ <test name="remove-cart-items">	
+	  	<classes>
+	  		<class name="TestCases.RemoveAllItemsFromCart"/>	
+	    </classes>
+ </test>
+ 
+ <test name="navigate-to-PDP">	
+	  	<classes>
+	  		<class name="HomePage.TestCases.NavigateToPDPPage"/>	
+	    </classes>
+ </test>
+ 
+ <test name="add-product-to-cart">	
+	  	<classes>
+	  		<class name="PDP.TestCases.AddProductToCart"/>	
+	    </classes>
+ </test>
+ 
+ <test name="click-on-shopping-cart">	
+	  	<classes>
+	  		<class name="TestCases.ClickOnShoppingCartLink"/>	
+	    </classes>
+ </test>
+ 
+ <test name="click-on-checkout-page">	
+	  	<classes>
+	  		<class name="TestCases.ClickOnCheckoutLink"/>	
+	    </classes>
+ </test>
+ 
+  <test name="checkout">	
+	  	<classes>
+	  		<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
+	    </classes>
+ </test>
+  
+</suite>

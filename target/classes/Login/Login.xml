@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Login">
+<!--  	The test for all the user log-in till landing page -->
+
+<test name="open-browser">
+  		<parameter name="browser" value="mozila"/>
+	  	<parameter name="url" value="qa" />		
+	  	<classes>
+	  		<class name="TestMethods.OpenBrowser"/>	
+	    </classes>
+  </test>
+  
+ <test name="log-in">	
+	  	<classes>
+	  		<class name="Login.TestCases.Login"/>	
+	    </classes>
+ </test>
+  
+</suite>
