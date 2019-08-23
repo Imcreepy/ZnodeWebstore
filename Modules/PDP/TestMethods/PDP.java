@@ -1,27 +1,21 @@
 package PDP.TestMethods;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import CommonUtilities.Click;
-import CommonUtilities.VerifyElementStatus;
+import Classes.PDPBaseClass;
+import Common.Click;
+import Common.VerifyElementStatus;
 
 
-public class PDP {
-
-	@FindBy(xpath = "//button[@data-test-selector='btnAddToCart']")
-	private WebElement btnAddToCart;
-	
-	@FindBy(xpath = "//input[@data-test-selector='txtQuantity']")
-	private WebElement txtQuantity;
-	
+public class PDP extends PDPBaseClass 
+{
 	public void addToCart(int quantity)
 	{
 		VerifyElementStatus.isElementPresent("xpath", "//button[@data-test-selector='btnAddToCart']");
 		
 		txtQuantity.clear();
 		
-		txtQuantity.sendKeys(Integer.toString(quantity));
+		String quantityInCart = Integer.toString(quantity);
+		
+		txtQuantity.sendKeys(quantityInCart);
 		
 		VerifyElementStatus.isElementClickable(btnAddToCart);
 		

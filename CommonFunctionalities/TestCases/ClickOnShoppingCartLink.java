@@ -2,8 +2,8 @@ package TestCases;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import CommonUtilities.Browser;
 import TestMethods.Navigate;
+import Driver.DriverManager;
 
 public class ClickOnShoppingCartLink {
 
@@ -12,7 +12,7 @@ public class ClickOnShoppingCartLink {
 	@Test(priority=0)
 	void goToShoppingCart()
 	{
-		objCart = PageFactory.initElements(Browser.webDriver, Navigate.class);
+		objCart = PageFactory.initElements(DriverManager.getDriver().webDriver, Navigate.class);
 		
 		objCart.navigateToShoppingCart();
 	}

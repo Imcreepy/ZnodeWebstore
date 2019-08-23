@@ -1,53 +1,75 @@
 package CheckoutPage.TestCases;
 
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
 import CheckoutPage.TestMethods.CheckOutPage;
-import CommonUtilities.Browser;
-import CommonUtilities.DataFile;
+import Classes.TestBaseClass;
+import Common.BrowserCapability;
+import OrderReceipt.TestMethods.OrderReceipt;
+import Driver.DriverManager;
 
-public class AddDetailsOnCheckoutPage {
-
-	CheckOutPage objPage = new CheckOutPage();
+public class AddDetailsOnCheckoutPage extends TestBaseClass
+{
+	CheckOutPage objPage;
 	
-	DataFile objdatafile = new DataFile();
+	OrderReceipt objOrdRec;
+	
+	String dataFilePath;
+	
+	AddDetailsOnCheckoutPage()
+	{
+		dataFilePath = getProperty("config.properties", "checkoutPageDataFilePath");
+	}
 	
 	@Test(priority = 1)
-	void addShippingAddress()
+	private void addShippingAddress()
 	{
-		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
+		objPage = PageFactory.initElements(DriverManager.getDriver().webDriver, CheckOutPage.class);
 		
-		objPage.addValidShippingAddressForRegisteredUser();
+		objPage.addShippingAddrForRegUser();
 	}
 	
 	@Test(priority = 2)
-	void selectShippingOption()
+	private void selectShippingOption()
 	{
-		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
+//		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
 		
 		objPage.selectShippingOption();
 	} 
 	
 	@Test(priority = 3)
-	void selectPaymentOption()
+	private void selectPaymentOption()
 	{
-		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
+		setDataFile(dataFilePath, "PaymentOptions");
 		
-		objdatafile.dataFile("\\Modules\\CheckoutPage\\DataFiles\\CheckoutPage.xls", "PaymentOptions");
-		
-		objPage.selectPaymentOption(objdatafile.getData("PaypalExpress", "Options"));
+		objPage.selectPaymentOption(getData("WorldPay", "Options"));
 	} 
 	
 	@Test(priority = 4)
 	void enterPaymentDetails()
 	{
-		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
+//		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
 		
-		objdatafile.dataFile("\\Modules\\CheckoutPage\\DataFiles\\CheckoutPage.xls", "CreditCardDetails");
+		setDataFile(dataFilePath, "CreditCardDetails");
 		
-		objPage.addPaymentDetails(objdatafile.getData("Visa", "CreditCardType"), objdatafile.getData("Visa", "CardHolderName"), 
-				objdatafile.getData("Visa", "CardNumber"), objdatafile.getData("Visa", "CardExpDate"),
-				objdatafile.getData("Visa", "CardExpYear"), objdatafile.getData("Visa", "CardCVVNumber"));
+		objPage.addPaymentDetails(getData("Visa", "CreditCardType"), getData("Visa", "CardHolderName"), 
+		getData("Visa", "CardNumber"), getData("Visa", "CardExpDate"), getData("Visa", "CardExpYear"), 
+		getData("Visa", "CardCVVNumber"));
 	} 
+	
+	
+	@Test(priority = 5)
+	private void clickOnPlaceOrder()
+	{
+		objPage.clickOnPlaceOrderButton();
+	}
+	
+	@Test(priority = 6)
+	private void clickOnContinueShopping()
+	{
+		objOrdRec = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
+		
+		objOrdRec.clickOnContinueShopping();
+	}
 }

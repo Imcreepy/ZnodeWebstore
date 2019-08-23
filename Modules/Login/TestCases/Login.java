@@ -1,21 +1,36 @@
 package Login.TestCases;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import CommonUtilities.Browser;
-import CommonUtilities.DataFile;
+import Classes.TestBaseClass;
+import Common.BrowserCapability;
 import Login.TestMethods.LoginPage;
+import Driver.DriverManager;
 
 
-public class Login {
+public class Login extends TestBaseClass
+{
 
 	LoginPage loginPage;
-	DataFile loginData = new DataFile();
+	
+	String dataFilePath;
+	
+//	Login()
+//	{
+//		dataFilePath = getProperty("config.properties", "loginPageDataFilePath");
+//	}
+	
+	@BeforeClass
+	public void initiateDashboardPage()
+	{
+		loginPage = PageFactory.initElements(DriverManager.getDriver().webDriver, LoginPage.class);
+	}
 	
 	@Test(priority=0)	
 	public void clickOnLoginLink()
 	{
-		loginPage = PageFactory.initElements(Browser.webDriver,LoginPage.class);
+		
 		
 		loginPage.GoToLoginPage();
 	}
@@ -23,10 +38,8 @@ public class Login {
 	@Test(priority=1)	
 	public void enterLoginCredentials()
 	{
-		loginPage = PageFactory.initElements(Browser.webDriver,LoginPage.class);
+		setDataFile(dataFilePath, "Credentials");
 		
-		loginData.dataFile("\\Modules\\Login\\Data Files\\Login Credentials.xls", "Sheet1");
-		
-		loginPage.login(loginData.getData("StoreUser", "Username"), loginData.getData("StoreUser", "Password"));
+		loginPage.login(getData("StoreUser", "Username"), getData("StoreUser", "Password"));
 	}
 }

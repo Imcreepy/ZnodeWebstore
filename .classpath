@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="Utilities"/>
-	<classpathentry kind="src" path="Drivers"/>
 	<classpathentry kind="src" path="CommonFunctionalities"/>
 	<classpathentry kind="src" path="Modules"/>
 	<classpathentry kind="src" path="Test Suites"/>
+	<classpathentry kind="src" path="BaseClasses"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

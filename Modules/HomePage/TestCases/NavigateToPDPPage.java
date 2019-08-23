@@ -2,10 +2,9 @@ package HomePage.TestCases;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
-import CommonUtilities.Browser;
 import HomePage.TestMethods.HomePage;
 import TestMethods.Search;
+import Driver.DriverManager;
 
 
 public class NavigateToPDPPage {
@@ -16,15 +15,15 @@ public class NavigateToPDPPage {
 	@Test(priority=0)
 	public void searchForProduct()
 	{
-		search = PageFactory.initElements(Browser.webDriver, Search.class);
+		search = PageFactory.initElements(DriverManager.getDriver().webDriver, Search.class);
 		
-		search.searchProduct("Pear");
+		search.searchProduct("Cherries");
 	}
 	
 	@Test(priority=1)
 	public void clickOnAProductImage()
 	{
-		nav = PageFactory.initElements(Browser.webDriver, HomePage.class);
+		nav = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
 		
 		nav.ClickOnProductImage();
 	}

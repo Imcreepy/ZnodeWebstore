@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="poc" parallel="tests" thread-count="1" >
+
+<!-- This test scenario coverage is for the Chrome driver -->
+	<test name="pim module Chrome">
+		<parameter name ="Browser" value="Chrome"/>
+		<parameter name="Environment" value ="Stage"/>	
+		<packages>
+			<package name="Driver"/>
+		</packages>
+	</test>		
+	
+	
+<!-- This test scenario coverage is for the Firefox driver -->
+	<test name="pim module firefox">
+		<parameter name ="Browser" value="firefox"/>
+		<parameter name="Environment" value ="Stage"/>	
+		<packages>
+			<package name="Driver"/>
+		</packages>
+	</test>		
+	
+</suite>

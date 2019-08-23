@@ -2,10 +2,12 @@ package Login.TestMethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import CommonUtilities.Click;
-import CommonUtilities.VerifyElementStatus;
 
-public class LoginPage {
+import Classes.LoginBaseClass;
+import Common.Click;
+import CreateAnAccount.TestMethods.CreateAnAccount;
+
+public class LoginPage extends LoginBaseClass {
 
 	@FindBy(xpath = "//a[@data-test-selector='linkLoginLink']")
 	private WebElement linkLogin;
@@ -19,6 +21,11 @@ public class LoginPage {
 	@FindBy(xpath = "//button[@data-test-selector='btnLoginButton']")
 	private WebElement buttonLogin;
 	
+	@FindBy(xpath = "//*[@id='messageBoxContainerId']")
+	private WebElement messageBoxContainer;
+	
+	CreateAnAccount objCreateAccount = new CreateAnAccount();
+	
 	public void GoToLoginPage()
 	{
 		Click.clickAndWait(linkLogin);
@@ -31,5 +38,10 @@ public class LoginPage {
 		inputPassword.sendKeys(password);
 		
 		Click.clickAndWait(buttonLogin);
+		
+//		if(messageBoxContainer.isDisplayed())
+//		{
+//			objCreateAccount.createNewAccount(userName, password);
+//		}
 	}
 }

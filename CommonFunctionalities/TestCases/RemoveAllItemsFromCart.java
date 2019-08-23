@@ -2,10 +2,9 @@ package TestCases;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
-import CommonUtilities.Browser;
 import TestMethods.Navigate;
 import TestMethods.RemoveItemsFromCart;
+import Driver.DriverManager;
 
 public class RemoveAllItemsFromCart {
 
@@ -15,7 +14,7 @@ public class RemoveAllItemsFromCart {
 	@Test(priority=0)
 	void removeAllItems()
 	{
-		objRemoveItems = PageFactory.initElements(Browser.webDriver, RemoveItemsFromCart.class);
+		objRemoveItems = PageFactory.initElements(DriverManager.getDriver().webDriver, RemoveItemsFromCart.class);
 		
 		objRemoveItems.removeAllItemsFromCart();
 	}
@@ -23,7 +22,7 @@ public class RemoveAllItemsFromCart {
 	@Test(priority=1)
 	void navigateToHomePage() throws InterruptedException
 	{
-		nav = PageFactory.initElements(Browser.webDriver, Navigate.class);
+		nav = PageFactory.initElements(DriverManager.getDriver().webDriver, Navigate.class);
 		
 		Thread.sleep(3000);
 		

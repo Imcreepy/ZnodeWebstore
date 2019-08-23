@@ -3,8 +3,8 @@ package TestMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import CommonUtilities.Click;
-import CommonUtilities.VerifyElementStatus;
+import Common.Click;
+import Common.VerifyElementStatus;
 
 public class RemoveItemsFromCart {
 
@@ -18,19 +18,27 @@ public class RemoveItemsFromCart {
 	
 	public void removeAllItemsFromCart()
 	{
-		VerifyElementStatus.isElementVisible(cartCount);
-		
-		int count = Integer.parseInt(cartCount.getText());
-		
-		if(count != 0)
+		try
 		{
-			Click.clickAndWait(cartCount);
+			VerifyElementStatus.isElementVisible(cartCount);
 			
-			VerifyElementStatus.isElementPresent("xpath", xpathOfRemoveAllCartItems);
+			int count = Integer.parseInt(cartCount.getText());
 			
-			VerifyElementStatus.isElementClickable(linkRemoveAllCartItem);
-			
-			Click.clickAndWait(linkRemoveAllCartItem);
+			if(count != 0)
+			{
+				Click.clickAndWait(cartCount);
+				
+				VerifyElementStatus.isElementPresent("xpath", xpathOfRemoveAllCartItems);
+				
+				VerifyElementStatus.isElementClickable(linkRemoveAllCartItem);
+				
+				Click.clickAndWait(linkRemoveAllCartItem);
+			}
+		}
+		
+		catch(NumberFormatException ex)
+		{
+			ex.printStackTrace();
 		}
 	}
 }
