@@ -3,11 +3,11 @@ package CheckoutPage.TestMethods;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
 import Classes.CheckOutBaseClass;
-import Common.Click;
-import Common.GlobalVariables;
-import Common.VerifyElementStatus;
-import Driver.DriverManager;
-import Common.MyWait;
+import common.Click;
+import common.GlobalVariables;
+import common.MyWait;
+import common.VerifyElementStatus;
+import driver.DriverManager;
 
 public class CheckOutPage extends CheckOutBaseClass 
 {
@@ -19,7 +19,7 @@ public class CheckOutPage extends CheckOutBaseClass
 			
 			if (displayName.isDisplayed())
 			{
-				displayName.sendKeys(getData("DisplayName", "ValidShippingAddress"));
+				setText(displayName, getData("DisplayName", "ValidShippingAddress"));
 				
 				addShippingAddress();
 				
@@ -45,30 +45,30 @@ public class CheckOutPage extends CheckOutBaseClass
 	
 	private void addShippingAddress()
 	{
-		txtAddressFirstname.sendKeys(getData("FirstName", "ValidShippingAddress"));
+		setText(txtAddressFirstname, getData("FirstName", "ValidShippingAddress"));
 		
-		txtAddressLastname.sendKeys(getData("LastName", "ValidShippingAddress"));
+		setText(txtAddressLastname, getData("LastName", "ValidShippingAddress"));
 		
-		txtAddressStreet1.sendKeys(getData("StreetAddress1", "ValidShippingAddress"));
+		setText(txtAddressStreet1, getData("StreetAddress1", "ValidShippingAddress"));
 		
-		txtPhoneNumber.sendKeys(getData("PhoneNumber", "ValidShippingAddress"));
+		setText(txtPhoneNumber, getData("PhoneNumber", "ValidShippingAddress"));
 		
-		txtCompanyName.sendKeys(getData("CompanyName", "ValidShippingAddress"));
+		setText(txtCompanyName, getData("CompanyName", "ValidShippingAddress"));
 		
-		txtCityName.sendKeys(getData("City", "ValidShippingAddress"));
+		setText(txtCityName, getData("City", "ValidShippingAddress"));
 		
 		select.selectOptionByName(drpState, getData("State", "ValidShippingAddress"));
 		
 		select.selectOptionByName(drpCountryName, getData("Country", "ValidShippingAddress"));
 		
-		txtPostalCode.sendKeys(getData("PostalCode", "ValidShippingAddress"));
+		setText(txtPostalCode, getData("PostalCode", "ValidShippingAddress"));
 	}
 	
 	public void selectShippingOption()
 	{
 		VerifyElementStatus.isElementNotVisible("xpath", "//div[@id='loading']");
 		
-		VerifyElementStatus.isElementVisible(chkShippingOption);
+		MyWait.waitTill("verylong", "isvisible", chkShippingOption);
 			
 		Click.clickAndWait(chkShippingOption);
 	}
@@ -79,13 +79,16 @@ public class CheckOutPage extends CheckOutBaseClass
 		
 		setDataFile(dataFilePath, "PaymentOptions");
 		
-		((JavascriptExecutor) DriverManager.getDriver().webDriver).executeScript("arguments[0].scrollIntoView();", chkPaymentOption_WORLDPAY);
+		scrollToElement(chkPaymentOption_WORLDPAY);
 		
 		if (paymentOption.equalsIgnoreCase(getData("COD", "Options")))
 			Click.clickAndWait(chkPaymentOption_COD);
 		
 		else if (paymentOption.equalsIgnoreCase(getData("PaypalExpress", "Options")))
 			Click.clickAndWait(chkPaymentOption_PAYPAL);
+		
+		else if (paymentOption.equalsIgnoreCase(getData("Braintree", "Options")))
+			Click.clickAndWait(chkPaymentOption_BRAINTREE);
 		
 		else if (paymentOption.equalsIgnoreCase(getData("Payflow", "Options")))
 			Click.clickAndWait(chkPaymentOption_PAYFLOW);

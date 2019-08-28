@@ -1,6 +1,6 @@
-package Driver;
+package driver;
 
-import Driver.DriverClass;
+import driver.DriverClass;
 
 public class DriverFactory {
 

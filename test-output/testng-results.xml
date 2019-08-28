@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="15" passed="12" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-08-23T12:32:47Z" name="PlaceAnOrder" finished-at="2019-08-23T12:32:57Z" duration-ms="9105">
+  <suite started-at="2019-08-28T05:29:29Z" name="PlaceAnOrder" finished-at="2019-08-28T05:31:26Z" duration-ms="116954">
     <groups>
     </groups>
-    <test started-at="2019-08-23T12:32:47Z" name="open-browser" finished-at="2019-08-23T12:32:57Z" duration-ms="9105">
+    <test started-at="2019-08-28T05:29:29Z" name="open-browser" finished-at="2019-08-28T05:29:34Z" duration-ms="5231">
       <class name="Driver.DriverClass">
-        <test-method is-config="true" signature="driverSetup()[pri:0, instance:Driver.DriverClass@55740540]" started-at="2019-08-23T12:32:44Z" name="driverSetup" finished-at="2019-08-23T12:32:47Z" duration-ms="3322" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverSetup -->
-        <test-method is-config="true" signature="openBrowser(java.lang.String, java.lang.String)[pri:0, instance:Driver.DriverClass@55740540]" started-at="2019-08-23T12:32:47Z" name="openBrowser" finished-at="2019-08-23T12:32:57Z" duration-ms="9100" status="PASS">
+        <test-method is-config="true" signature="openBrowser(java.lang.String, java.lang.String)[pri:0, instance:Driver.DriverClass@60015ef5]" started-at="2019-08-28T05:29:29Z" name="openBrowser" finished-at="2019-08-28T05:29:34Z" duration-ms="5226" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Stage]]>
+                <![CDATA[qa]]>
               </value>
             </param>
           </params>
@@ -29,5 +25,309 @@
         </test-method> <!-- openBrowser -->
       </class> <!-- Driver.DriverClass -->
     </test> <!-- open-browser -->
+    <test started-at="2019-08-28T05:29:34Z" name="log-in" finished-at="2019-08-28T05:29:40Z" duration-ms="5524">
+      <class name="Login.TestCases.Login">
+        <test-method is-config="true" signature="initiatedDriver()[pri:0, instance:Login.TestCases.Login@7671cb68]" started-at="2019-08-28T05:29:34Z" name="initiatedDriver" finished-at="2019-08-28T05:29:34Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiatedDriver -->
+        <test-method is-config="true" signature="initiateLoginPage()[pri:0, instance:Login.TestCases.Login@7671cb68]" started-at="2019-08-28T05:29:34Z" name="initiateLoginPage" finished-at="2019-08-28T05:29:34Z" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiateLoginPage -->
+        <test-method signature="clickOnLoginLink()[pri:0, instance:Login.TestCases.Login@7671cb68]" started-at="2019-08-28T05:29:34Z" name="clickOnLoginLink" finished-at="2019-08-28T05:29:35Z" duration-ms="926" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnLoginLink -->
+        <test-method signature="enterLoginCredentials()[pri:1, instance:Login.TestCases.Login@7671cb68]" started-at="2019-08-28T05:29:35Z" name="enterLoginCredentials" finished-at="2019-08-28T05:29:40Z" duration-ms="4557" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterLoginCredentials -->
+      </class> <!-- Login.TestCases.Login -->
+    </test> <!-- log-in -->
+    <test started-at="2019-08-28T05:29:40Z" name="remove-cart-items" finished-at="2019-08-28T05:29:44Z" duration-ms="4137">
+      <class name="TestCases.RemoveAllItemsFromCart">
+        <test-method signature="removeAllItems()[pri:0, instance:TestCases.RemoveAllItemsFromCart@59af0466]" started-at="2019-08-28T05:29:40Z" name="removeAllItems" finished-at="2019-08-28T05:29:40Z" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeAllItems -->
+        <test-method signature="navigateToHomePage()[pri:1, instance:TestCases.RemoveAllItemsFromCart@59af0466]" started-at="2019-08-28T05:29:40Z" name="navigateToHomePage" finished-at="2019-08-28T05:29:44Z" duration-ms="4028" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHomePage -->
+      </class> <!-- TestCases.RemoveAllItemsFromCart -->
+    </test> <!-- remove-cart-items -->
+    <test started-at="2019-08-28T05:29:44Z" name="navigate-to-PDP" finished-at="2019-08-28T05:29:50Z" duration-ms="6081">
+      <class name="HomePage.TestCases.NavigateToPDPPage">
+        <test-method is-config="true" signature="initiatePDPPage()[pri:0, instance:HomePage.TestCases.NavigateToPDPPage@2e55dd0c]" started-at="2019-08-28T05:29:44Z" name="initiatePDPPage" finished-at="2019-08-28T05:29:44Z" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiatePDPPage -->
+        <test-method signature="searchForProduct()[pri:0, instance:HomePage.TestCases.NavigateToPDPPage@2e55dd0c]" started-at="2019-08-28T05:29:44Z" name="searchForProduct" finished-at="2019-08-28T05:29:47Z" duration-ms="3359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForProduct -->
+        <test-method signature="clickOnAProductImage()[pri:1, instance:HomePage.TestCases.NavigateToPDPPage@2e55dd0c]" started-at="2019-08-28T05:29:47Z" name="clickOnAProductImage" finished-at="2019-08-28T05:29:50Z" duration-ms="2714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnAProductImage -->
+      </class> <!-- HomePage.TestCases.NavigateToPDPPage -->
+    </test> <!-- navigate-to-PDP -->
+    <test started-at="2019-08-28T05:29:50Z" name="add-product-to-cart" finished-at="2019-08-28T05:29:51Z" duration-ms="1035">
+      <class name="PDP.TestCases.AddProductToCart">
+        <test-method is-config="true" signature="initializePDPPage()[pri:0, instance:PDP.TestCases.AddProductToCart@79da8dc5]" started-at="2019-08-28T05:29:50Z" name="initializePDPPage" finished-at="2019-08-28T05:29:50Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializePDPPage -->
+        <test-method signature="addAProductToCart()[pri:1, instance:PDP.TestCases.AddProductToCart@79da8dc5]" started-at="2019-08-28T05:29:50Z" name="addAProductToCart" finished-at="2019-08-28T05:29:51Z" duration-ms="1032" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addAProductToCart -->
+      </class> <!-- PDP.TestCases.AddProductToCart -->
+    </test> <!-- add-product-to-cart -->
+    <test started-at="2019-08-28T05:29:51Z" name="click-on-shopping-cart" finished-at="2019-08-28T05:29:51Z" duration-ms="159">
+      <class name="TestCases.ClickOnShoppingCartLink">
+        <test-method signature="goToShoppingCart()[pri:0, instance:TestCases.ClickOnShoppingCartLink@2bfc268b]" started-at="2019-08-28T05:29:51Z" name="goToShoppingCart" finished-at="2019-08-28T05:29:51Z" duration-ms="156" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <i class="f-size zf-cart header-toolbar-cart" data-test-selector="linkCart"></i> is not clickable at point (1518, 67). Other element would receive the click: <div id="loader-content-backdrop" class="modal-backdrop fade in">...</div>
+  (Session info: chrome=76.0.3809.132)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACD-002', ip: '10.0.12.75', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <i class="f-size zf-cart header-toolbar-cart" data-test-selector="linkCart"></i> is not clickable at point (1518, 67). Other element would receive the click: <div id="loader-content-backdrop" class="modal-backdrop fade in">...</div>
+  (Session info: chrome=76.0.3809.132)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACD-002', ip: '10.0.12.75', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy17.click(Unknown Source)
+at Common.Click.clickAndWait(Click.java:19)
+at TestMethods.Navigate.navigateToShoppingCart(Navigate.java:26)
+at TestCases.ClickOnShoppingCartLink.goToShoppingCart(ClickOnShoppingCartLink.java:17)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToShoppingCart -->
+      </class> <!-- TestCases.ClickOnShoppingCartLink -->
+    </test> <!-- click-on-shopping-cart -->
+    <test started-at="2019-08-28T05:29:51Z" name="click-on-checkout-page" finished-at="2019-08-28T05:30:06Z" duration-ms="14695">
+      <class name="TestCases.ClickOnCheckoutLink">
+        <test-method signature="goToCheckoutPage()[pri:0, instance:TestCases.ClickOnCheckoutLink@1ba9117e]" started-at="2019-08-28T05:29:51Z" name="goToCheckoutPage" finished-at="2019-08-28T05:30:06Z" duration-ms="14693" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToCheckoutPage -->
+      </class> <!-- TestCases.ClickOnCheckoutLink -->
+    </test> <!-- click-on-checkout-page -->
+    <test started-at="2019-08-28T05:30:06Z" name="checkout" finished-at="2019-08-28T05:31:26Z" duration-ms="79968">
+      <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
+        <test-method is-config="true" signature="initiateCheckoutPage()[pri:0, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:06Z" name="initiateCheckoutPage" finished-at="2019-08-28T05:30:06Z" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiateCheckoutPage -->
+        <test-method is-config="true" signature="initiatedDriver()[pri:0, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:06Z" name="initiatedDriver" finished-at="2019-08-28T05:30:06Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initiatedDriver -->
+        <test-method signature="addShippingAddress()[pri:1, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:06Z" name="addShippingAddress" finished-at="2019-08-28T05:30:07Z" duration-ms="1209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addShippingAddress -->
+        <test-method signature="selectShippingOption()[pri:2, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:07Z" name="selectShippingOption" finished-at="2019-08-28T05:30:53Z" duration-ms="46001" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on XP (fc3283a5c2536e9fe22cc23a164b5750)] -> xpath: //label[@data-test-selector='lblShipping']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACD-002', ip: '10.0.12.75', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on XP (fc3283a5c2536e9fe22cc23a164b5750)] -> xpath: //label[@data-test-selector='lblShipping']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACD-002', ip: '10.0.12.75', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at Common.MyWait.waitTill(MyWait.java:92)
+at CheckoutPage.TestMethods.CheckOutPage.selectShippingOption(CheckOutPage.java:71)
+at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.selectShippingOption(AddDetailsOnCheckoutPage.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectShippingOption -->
+        <test-method signature="selectPaymentOption()[pri:3, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:53Z" name="selectPaymentOption" finished-at="2019-08-28T05:30:54Z" duration-ms="549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectPaymentOption -->
+        <test-method signature="enterPaymentDetails()[pri:4, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:54Z" name="enterPaymentDetails" finished-at="2019-08-28T05:30:54Z" duration-ms="257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterPaymentDetails -->
+        <test-method signature="clickOnPlaceOrder()[pri:5, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:54Z" name="clickOnPlaceOrder" finished-at="2019-08-28T05:30:54Z" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnPlaceOrder -->
+        <test-method signature="clickOnContinueShopping()[pri:6, instance:CheckoutPage.TestCases.AddDetailsOnCheckoutPage@b62d79]" started-at="2019-08-28T05:30:54Z" name="clickOnContinueShopping" finished-at="2019-08-28T05:31:26Z" duration-ms="31588" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //a[text()='Continue shopping']' (tried for 30 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //a[text()='Continue shopping']' (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at Common.MyWait.waitTill(MyWait.java:90)
+at OrderReceipt.TestMethods.OrderReceipt.clickOnContinueShopping(OrderReceipt.java:12)
+at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.clickOnContinueShopping(AddDetailsOnCheckoutPage.java:70)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Continue shopping']"}
+  (Session info: chrome=76.0.3809.132)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACD-002', ip: '10.0.12.75', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+*** Element info: {Using=xpath, value=//a[text()='Continue shopping']}
+at jdk.internal.reflect.GeneratedConstructorAccessor38.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy17.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnContinueShopping -->
+      </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
+      <class name="Driver.DriverClass">
+        <test-method is-config="true" signature="driverSetup()[pri:0, instance:Driver.DriverClass@60015ef5]" started-at="2019-08-28T05:29:25Z" name="driverSetup" finished-at="2019-08-28T05:29:29Z" duration-ms="3491" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverSetup -->
+      </class> <!-- Driver.DriverClass -->
+    </test> <!-- checkout -->
   </suite> <!-- PlaceAnOrder -->
 </testng-results>

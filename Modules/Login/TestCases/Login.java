@@ -4,34 +4,29 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Classes.TestBaseClass;
-import Common.BrowserCapability;
 import Login.TestMethods.LoginPage;
-import Driver.DriverManager;
+import common.BrowserFunctionality;
+import driver.DriverManager;
 
 
 public class Login extends TestBaseClass
 {
 
-	LoginPage loginPage;
+	LoginPage loginPage = new LoginPage();
 	
 	String dataFilePath;
 	
-//	Login()
-//	{
-//		dataFilePath = getProperty("config.properties", "loginPageDataFilePath");
-//	}
-	
 	@BeforeClass
-	public void initiateDashboardPage()
+	public void initiateLoginPage()
 	{
-		loginPage = PageFactory.initElements(DriverManager.getDriver().webDriver, LoginPage.class);
+		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		
+		dataFilePath = getProperty("config.properties", "loginPageDataFilePath");
 	}
 	
 	@Test(priority=0)	
 	public void clickOnLoginLink()
 	{
-		
-		
 		loginPage.GoToLoginPage();
 	}
 	

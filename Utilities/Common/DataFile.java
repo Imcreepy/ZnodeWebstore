@@ -1,4 +1,4 @@
-package Common;
+package common;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +19,7 @@ public class DataFile {
 	private static Workbook workbook;
 	int colNum = 0;
 	
-	public static void dataFile(String filePath, String sheetName)
+	public void dataFile(String filePath, String sheetName)
 	{
 		
 		String pathTillProject = System.getProperty("user.dir");
@@ -62,22 +62,25 @@ public class DataFile {
 	}
 
 	
-	public static String getData(String rowName, String columnName)
+	public String getData(String rowName, String columnName)
 	{
 		try {
-			int row_num = -1;
-			int column_num = -1;
-			
-		    for(int i=0; i < sheet.getPhysicalNumberOfRows(); i++)
-		    {
-		        if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(rowName))
-		        {
-		           row_num = i;
-		           break;
-		        }
-		    }
+				int row_num = -1;
+				int column_num = -1;
+				
+				int noOfRows = sheet.getPhysicalNumberOfRows();
+				int noOfColumns = row.getLastCellNum();
+				
+			    for(int i=0; i < noOfRows; i++)
+			    {
+			        if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(rowName))
+			        {
+			           row_num = i;
+			           break;
+			        }
+			    }
 		        
-		        for(int j=0; j < row.getLastCellNum(); j++)
+		        for(int j=0; j < noOfColumns; j++)
 		        {
 		        	Cell cell = row.getCell(j);
 		        	if (cell == null || cell.getCellType() == Cell.CELL_TYPE_BLANK) {

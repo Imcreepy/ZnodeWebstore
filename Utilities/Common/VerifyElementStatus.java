@@ -1,4 +1,4 @@
-package Common;
+package common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
@@ -7,7 +7,8 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Driver.DriverManager;
+
+import driver.DriverManager;
 
 public class VerifyElementStatus {
 

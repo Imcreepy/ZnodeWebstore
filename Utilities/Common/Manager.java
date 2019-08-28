@@ -1,11 +1,11 @@
-package Common;
+package common;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 
 import org.openqa.selenium.interactions.Actions;
 
-import Driver.DriverManager;
+import driver.DriverManager;
 
 public class Manager {
 

@@ -1,10 +1,11 @@
-package Common;
+package common;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Driver.DriverManager;
+
+import driver.DriverManager;
 
 public class MyWait {
 	
@@ -14,6 +15,7 @@ public class MyWait {
 	private final static int shortWaitTime = 10;
 	private final static int MediumWaitTime = 15;
 	private final static int longWaitTime = 20;
+	private final static int veryLongWaitTime = 30;
 
 
 	public static WebDriverWait getDriverWait(int time)
@@ -75,6 +77,9 @@ public class MyWait {
 			case "short":
 				wait =  getDriverWait(shortWaitTime);
 				break;
+			case "verylong":
+				wait =  getDriverWait(veryLongWaitTime);
+				break;
 			default:
 				wait =  getDriverWait(shortWaitTime);
 		}// End of switch case for selecting the wait
@@ -84,6 +89,8 @@ public class MyWait {
 		{
 			case "isvisible":
 				wait.until(ExpectedConditions.visibilityOf(element));
+			case "isnotvisible":
+				wait.until(ExpectedConditions.invisibilityOf(element));
 			case "isclickable":
 				wait.until(ExpectedConditions.elementToBeClickable(element));
 			default:

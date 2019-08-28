@@ -1,10 +1,11 @@
-package TestCases;
+package testcases;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-import TestMethods.Navigate;
-import TestMethods.RemoveItemsFromCart;
-import Driver.DriverManager;
+
+import driver.DriverManager;
+import testmethods.Navigate;
+import testmethods.RemoveItemsFromCart;
 
 public class RemoveAllItemsFromCart {
 

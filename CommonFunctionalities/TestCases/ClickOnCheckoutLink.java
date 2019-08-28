@@ -1,11 +1,9 @@
-package TestCases;
+package testcases;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
-
-import Common.BrowserCapability;
-import TestMethods.Navigate;
-import Driver.DriverManager;
+import driver.DriverManager;
+import testmethods.Navigate;
 
 public class ClickOnCheckoutLink {
 

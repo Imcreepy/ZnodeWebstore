@@ -1,8 +1,8 @@
 package CreateAnAccount.TestMethods;
 
 import Classes.CreateAnAccountBaseClass;
-import Common.Click;
-import Common.VerifyElementStatus;
+import common.Click;
+import common.VerifyElementStatus;
 
 public class CreateAnAccount extends CreateAnAccountBaseClass
 {	

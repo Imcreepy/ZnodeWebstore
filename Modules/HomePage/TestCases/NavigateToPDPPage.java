@@ -1,30 +1,36 @@
 package HomePage.TestCases;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import HomePage.TestMethods.HomePage;
-import TestMethods.Search;
-import Driver.DriverManager;
+import driver.DriverManager;
+import testmethods.Search;
 
 
 public class NavigateToPDPPage {
 
-	HomePage nav;	
+	HomePage home;
+	
 	Search search;
 	
-	@Test(priority=0)
-	public void searchForProduct()
+	@BeforeClass
+	private void initiatePDPPage()
 	{
 		search = PageFactory.initElements(DriverManager.getDriver().webDriver, Search.class);
 		
+		home = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
+	}
+	
+	@Test(priority=0)
+	private void searchForProduct()
+	{
 		search.searchProduct("Cherries");
 	}
 	
 	@Test(priority=1)
-	public void clickOnAProductImage()
+	private void clickOnAProductImage()
 	{
-		nav = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
-		
-		nav.ClickOnProductImage();
+		home.ClickOnProductImage();
 	}
 }

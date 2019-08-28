@@ -14,8 +14,10 @@
     <classes>
       <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
         <methods>
-          <include name="openBrowser"/>
+          <include name="initiateCheckoutPage"/>
+          <include name="selectShippingOption"/>
           <include name="clickOnContinueShopping"/>
+          <include name="initiatedDriver"/>
         </methods>
       </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
     </classes>

@@ -1,7 +1,8 @@
 package HomePage.TestMethods;
 
 import Classes.HomePageBaseClass;
-import Common.VerifyElementStatus;
+import common.Click;
+import common.VerifyElementStatus;
 
 public class HomePage extends HomePageBaseClass
 {
@@ -9,6 +10,6 @@ public class HomePage extends HomePageBaseClass
 	{
 		VerifyElementStatus.isElementVisible(imgProduct);
 		
-		imgProduct.click();
+		Click.clickAndWait(imgProduct);
 	}
 }

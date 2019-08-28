@@ -1,10 +1,10 @@
-package TestMethods;
+package testmethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import Common.Click;
-import Common.VerifyElementStatus;
+import common.Click;
+import common.VerifyElementStatus;
 
 public class Navigate {
 
@@ -20,6 +20,8 @@ public class Navigate {
 	public void navigateToShoppingCart()
 	{
 		VerifyElementStatus.isElementVisible(linkCart);
+		
+		VerifyElementStatus.isElementClickable(linkCart);
 		
 		Click.clickAndWait(linkCart);
 	}

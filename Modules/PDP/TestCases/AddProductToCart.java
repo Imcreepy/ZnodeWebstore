@@ -1,20 +1,25 @@
 package PDP.TestCases;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import driver.DriverManager;
 import PDP.TestMethods.PDP;
-import Driver.DriverManager;
 
 public class AddProductToCart 
 {
-
-	PDP objAddProduct;
+	PDP pdp;
 	
-	@Test(priority=0)
-	void addAProductToCart()
+	@BeforeClass
+	private void initializePDPPage()
 	{
-		objAddProduct = PageFactory.initElements(DriverManager.getDriver().webDriver, PDP.class);
-		
-		objAddProduct.addToCart(3);
+		pdp = PageFactory.initElements(DriverManager.getDriver().webDriver, PDP.class);
+	}
+	
+	@Test(priority=1)
+	private void addAProductToCart()
+	{
+		pdp.addToCart("3");
 	}
 }

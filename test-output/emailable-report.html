@@ -9,9 +9,104 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">PlaceAnOrder</th></tr>
-<tr><td><a href="#t0">open-browser</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">9,105</td><td></td><td></td></tr>
+<tr><td><a href="#t0">open-browser</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">5,231</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">log-in</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">5,524</td><td></td><td></td></tr>
+<tr><td><a href="#t2">remove-cart-items</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">4,137</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t3">navigate-to-PDP</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">6,081</td><td></td><td></td></tr>
+<tr><td><a href="#t4">add-product-to-cart</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">1,035</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t5">click-on-shopping-cart</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">159</td><td></td><td></td></tr>
+<tr><td><a href="#t6">click-on-checkout-page</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">14,695</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t7">checkout</a></td><td class="num">4</td><td class="num">0</td><td class="num attn">2</td><td class="num">79,968</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">12</th><th class="num">0</th><th class="num attn">3</th><th class="num">116,830</th><th colspan="2"></th></tr>
 </table>
 <table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PlaceAnOrder</th></tr></tbody><tbody id="t0"><tr><th colspan="4" class="invisible"/></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">log-in &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">Login.TestCases.Login</td><td><a href="#m0">clickOnLoginLink</a></td><td rowspan="1">1566970174810</td><td rowspan="1">926</td></tr><tr class="passedeven"><td><a href="#m1">enterLoginCredentials</a></td><td rowspan="1">1566970175739</td><td rowspan="1">4557</td></tr></tbody>
+<tbody id="t2"><tr><th colspan="4">remove-cart-items &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">TestCases.RemoveAllItemsFromCart</td><td><a href="#m2">navigateToHomePage</a></td><td rowspan="1">1566970180411</td><td rowspan="1">4028</td></tr><tr class="passedeven"><td><a href="#m3">removeAllItems</a></td><td rowspan="1">1566970180304</td><td rowspan="1">106</td></tr></tbody>
+<tbody id="t3"><tr><th colspan="4">navigate-to-PDP &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">HomePage.TestCases.NavigateToPDPPage</td><td><a href="#m4">clickOnAProductImage</a></td><td rowspan="1">1566970187814</td><td rowspan="1">2714</td></tr><tr class="passedeven"><td><a href="#m5">searchForProduct</a></td><td rowspan="1">1566970184454</td><td rowspan="1">3359</td></tr></tbody>
+<tbody id="t4"><tr><th colspan="4">add-product-to-cart &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">PDP.TestCases.AddProductToCart</td><td><a href="#m6">addAProductToCart</a></td><td rowspan="1">1566970190537</td><td rowspan="1">1032</td></tr></tbody>
+<tbody id="t5"><tr><th colspan="4">click-on-shopping-cart &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestCases.ClickOnShoppingCartLink</td><td><a href="#m7">goToShoppingCart</a></td><td rowspan="1">1566970191575</td><td rowspan="1">156</td></tr></tbody>
+<tbody id="t6"><tr><th colspan="4">click-on-checkout-page &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestCases.ClickOnCheckoutLink</td><td><a href="#m8">goToCheckoutPage</a></td><td rowspan="1">1566970191752</td><td rowspan="1">14693</td></tr></tbody>
+<tbody id="t7"><tr><th colspan="4">checkout &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</td><td><a href="#m9">clickOnContinueShopping</a></td><td rowspan="1">1566970254828</td><td rowspan="1">31588</td></tr><tr class="failedeven"><td><a href="#m10">selectShippingOption</a></td><td rowspan="1">1566970207670</td><td rowspan="1">46001</td></tr><tr><th colspan="4">checkout &#8212; passed</th></tr><tr class="passedeven"><td rowspan="4">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</td><td><a href="#m11">addShippingAddress</a></td><td rowspan="1">1566970206460</td><td rowspan="1">1209</td></tr><tr class="passedeven"><td><a href="#m12">clickOnPlaceOrder</a></td><td rowspan="1">1566970254480</td><td rowspan="1">347</td></tr><tr class="passedeven"><td><a href="#m13">enterPaymentDetails</a></td><td rowspan="1">1566970254222</td><td rowspan="1">257</td></tr><tr class="passedeven"><td><a href="#m14">selectPaymentOption</a></td><td rowspan="1">1566970253672</td><td rowspan="1">549</td></tr></tbody>
 </table>
-<h2>open-browser</h2></body>
+<h2>open-browser</h2><h2>log-in</h2><h3 id="m0">Login.TestCases.Login#clickOnLoginLink</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Login.TestCases.Login#enterLoginCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>remove-cart-items</h2><h3 id="m2">TestCases.RemoveAllItemsFromCart#navigateToHomePage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestCases.RemoveAllItemsFromCart#removeAllItems</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>navigate-to-PDP</h2><h3 id="m4">HomePage.TestCases.NavigateToPDPPage#clickOnAProductImage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">HomePage.TestCases.NavigateToPDPPage#searchForProduct</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>add-product-to-cart</h2><h3 id="m6">PDP.TestCases.AddProductToCart#addAProductToCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>click-on-shopping-cart</h2><h3 id="m7">TestCases.ClickOnShoppingCartLink#goToShoppingCart</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;i class=&quot;f-size zf-cart header-toolbar-cart&quot; data-test-selector=&quot;linkCart&quot;&gt;&lt;/i&gt; is not clickable at point (1518, 67). Other element would receive the click: &lt;div id=&quot;loader-content-backdrop&quot; class=&quot;modal-backdrop fade in&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.132)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy17.click(Unknown Source)
+	at Common.Click.clickAndWait(Click.java:19)
+	at TestMethods.Navigate.navigateToShoppingCart(Navigate.java:26)
+	at TestCases.ClickOnShoppingCartLink.goToShoppingCart(ClickOnShoppingCartLink.java:17)
+... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>click-on-checkout-page</h2><h3 id="m8">TestCases.ClickOnCheckoutLink#goToCheckoutPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>checkout</h2><h3 id="m9">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#clickOnContinueShopping</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[text()=&apos;Continue shopping&apos;]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Common.MyWait.waitTill(MyWait.java:90)
+	at OrderReceipt.TestMethods.OrderReceipt.clickOnContinueShopping(OrderReceipt.java:12)
+	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.clickOnContinueShopping(AddDetailsOnCheckoutPage.java:70)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()=&apos;Continue shopping&apos;]&quot;}
+  (Session info: chrome=76.0.3809.132)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+*** Element info: {Using=xpath, value=//a[text()=&apos;Continue shopping&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy17.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 28 more
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#selectShippingOption</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on XP (fc3283a5c2536e9fe22cc23a164b5750)] -&gt; xpath: //label[@data-test-selector=&apos;lblShipping&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fc3283a5c2536e9fe22cc23a164b5750
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at Common.MyWait.waitTill(MyWait.java:92)
+	at CheckoutPage.TestMethods.CheckOutPage.selectShippingOption(CheckOutPage.java:71)
+	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.selectShippingOption(AddDetailsOnCheckoutPage.java:39)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#addShippingAddress</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#clickOnPlaceOrder</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#enterPaymentDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">CheckoutPage.TestCases.AddDetailsOnCheckoutPage#selectPaymentOption</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
 </html>

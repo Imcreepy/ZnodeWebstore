@@ -1,40 +1,44 @@
 package Classes;
 
 import java.util.Properties;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeSuite;
-import Common.BrowserCapability;
-import Common.DataFile;
-import Common.PropertyFile;
-import Common.SendKeys;
-import Driver.DriverManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.BeforeClass;
 
-public class TestBaseClass {
+import common.DataFile;
+import common.PropertyFile;
+import common.Scroll;
+import common.SendKeys;
+import driver.DriverManager;
+
+
+public class TestBaseClass 
+{
+	public RemoteWebDriver driver;
 	
-	String dataFilePath;
-	
+	@BeforeClass
+	protected void initiatedDriver()
+	{
+		 driver = DriverManager.getDriver().webDriver;
+	}
+
 	protected String getProperty(String propFileName, String getProperty)
 	{
 		Properties prop = PropertyFile.loadPropertyFile(propFileName);
 		
-		dataFilePath = prop.getProperty(getProperty);
-		
-		return dataFilePath;
+		return prop.getProperty(getProperty);
 	}
+	
+	DataFile file = new DataFile();
 	
 	protected void setDataFile(String filePath, String sheetName)
 	{
-		DataFile.dataFile(filePath, sheetName);
+		file.dataFile(filePath, sheetName);
 	}
 
 	protected String getData(String rowName, String columnName)
 	{
-		String text =  DataFile.getData(rowName, columnName);
-		
-		return text;
+		return file.getData(rowName, columnName);
 	}
 	
 	protected void setText(WebElement element, String inputText)
@@ -48,14 +52,10 @@ public class TestBaseClass {
 	{
 		SendKeys.pressTab(element);
 	}
-	
-	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver().webDriver;
-	
+
 	protected void scrollToElement(WebElement element)
 	{
-		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Scroll.scrollToElement(element);
 	}
-	
-	
 } // End of class
 

@@ -1,10 +1,10 @@
-package Common;
+package common;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import Driver.DriverManager;
+import driver.DriverManager;
 
 public class SendKeys
 {

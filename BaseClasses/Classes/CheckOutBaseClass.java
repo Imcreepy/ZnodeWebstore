@@ -2,7 +2,8 @@ package Classes;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import Common.DropdownOptionSelection;
+
+import common.DropdownOptionSelection;
 
 public class CheckOutBaseClass extends TestBaseClass {
 
@@ -64,6 +65,9 @@ public class CheckOutBaseClass extends TestBaseClass {
 	@FindBy(xpath = "//label[@for='PAYPAL_EXPRESSPaypalExpress']")
 	 protected WebElement chkPaymentOption_PAYPAL;
 	
+	@FindBy(xpath = "//label[@for='CREDIT_CARDBraintree']")
+	 protected WebElement chkPaymentOption_BRAINTREE;
+	
 	@FindBy(xpath = "//label[@for='CREDIT_CARDPayflow']")
 	 protected WebElement chkPaymentOption_PAYFLOW;
 	
@@ -96,6 +100,9 @@ public class CheckOutBaseClass extends TestBaseClass {
 	
 	@FindBy(xpath = "//a[@data-test-selector='linkCreateNewAddress']")
 	protected WebElement linkCreateNewAddress;
+	
+	@FindBy(xpath = "//div[@id='loaderId']")
+	protected WebElement loadingShippingOptions;
 	// End of protected WebElements initialization
 	
 	protected DropdownOptionSelection select = new DropdownOptionSelection();

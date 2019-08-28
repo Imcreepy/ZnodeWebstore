@@ -1,4 +1,6 @@
-package Driver;
+package driver;
+
+import java.util.Properties;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,18 +10,29 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import Driver.DriverClass;
-import Driver.DriverFactory;
-import Driver.DriverManager;
+import common.BrowserFunctionality;
+import common.PropertyFile;
+import driver.DriverClass;
+import driver.DriverFactory;
+import driver.DriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverClass {
 
-	public  RemoteWebDriver webDriver; 
-	private final static String dev = "http://admin.qa.znode.amla.io:801/";
-	private final static String qa = "http://admin.qa.znode.amla.io:801/";
-	private final static String stage = "http://admin.qa.znode.amla.io:801/";
+	public RemoteWebDriver webDriver; 
+	private final static String webstoreQAUrl = getProperty("config.properties", "webstoreQAUrl");
+	private final static String webstoreautomationUrl = getProperty("config.properties", "webstoreautomationUrl");
 
+	private static String getProperty(String propFileName, String getProperty)
+	{
+		String dataFilePath;
+		
+		Properties prop = PropertyFile.loadPropertyFile(propFileName);
+		
+		dataFilePath = prop.getProperty(getProperty);
+		
+		return dataFilePath;
+	}
 	
 	// Method that will execute before all the execution to setup all the drivers
 	@BeforeSuite
@@ -52,14 +65,11 @@ public class DriverClass {
 		
 		switch(environment.toLowerCase())
 		{
-			case "stage":
-				webDriver.get(stage);
-				break;
-			case "dev":
-				webDriver.get(dev);
+			case "automation":
+				webDriver.get(webstoreautomationUrl);
 				break;
 			case "qa":
-				webDriver.get(qa);
+				webDriver.get(webstoreQAUrl);
 				break;
 			default:
 				System.out.println("Unable to match the condition for the Environment");
@@ -70,7 +80,7 @@ public class DriverClass {
 		driver.webDriver = webDriver;
         DriverManager.setDriver(driver);
 		// maximizing the Browser
-//		BrowserCapabilities.maximize();
+		BrowserFunctionality.maximizeBrowser();
 		
 	}// End of openBrowser Method
 }// End of Driver Class

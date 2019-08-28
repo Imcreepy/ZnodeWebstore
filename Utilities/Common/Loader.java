@@ -1,38 +1,38 @@
-package Common;
+package common;
 
 import java.util.NoSuchElementException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import Driver.DriverManager;
+import driver.DriverManager;
 
 public class Loader {
 
-	@FindBy(xpath = "//div[@id='loading']")
+	@FindBy(xpath = "//*[@id='loading']")
 	private WebElement backgroundLoader;
 	
-	WebDriverWait wait = new WebDriverWait(DriverManager.getDriver().webDriver, GlobalVariables.delayHigh);
-	
+	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver().webDriver;
 	
 	public void waitForPageLoad()
 	{
-		Boolean loader = null;
-		
 		try 
 		{
-			for(int i =1; i < 40; i++)
+			for(int index=0;index<40;index++) 
 			{
-				loader = wait.until(ExpectedConditions.invisibilityOf(backgroundLoader));
+				String loader= (String) js.executeScript("return $('#loading').attr('style')");
 				
-				if(loader == false)
-					wait.wait(1000);
+				if(loader=="display: none;") 
+				{
+					break;
+				}
 				
 				else
-					break;
+				{
+					MyWait.waitFor(1, "sec");
+				}
 			}
+//			MyWait.waitTill("short", "isvisible", backgroundLoader);
 		}
 	
 		catch(NullPointerException ex)

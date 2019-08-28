@@ -2,25 +2,24 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="PlaceAnOrder" thread-count="1">
+<suite name="PlaceAnOrder">
 <!--  	The test for all the user log-in till landing page -->
 
 <test name="open-browser">	
 		<parameter name ="Browser" value="chrome"/>
-		<parameter name="Environment" value ="Stage"/>	
+		<parameter name="Environment" value ="qa"/>	
 		<packages>
-			<package name="Driver.DriverClass"/>
-			<package name="Login.TestCases"/>
+			<package name="Driver"/>
 		</packages>
-  </test>
+ </test>
  
-<!--  <test name="log-in">
+ <test name="log-in">
 	  	<classes>
 	  		<class name="Login.TestCases.Login"/>
 	    </classes>
- </test> -->
+ </test>
  
- <!-- <test name="remove-cart-items">	
+ <test name="remove-cart-items">	
 	  	<classes>
 	  		<class name="TestCases.RemoveAllItemsFromCart"/>	
 	    </classes>
@@ -54,7 +53,5 @@
 	  	<classes>
 	  		<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
 	    </classes>
- </test> -->
- 
-  
-</suite>
+ </test>
+ </suite>

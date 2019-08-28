@@ -1,21 +1,19 @@
 package PDP.TestMethods;
 
 import Classes.PDPBaseClass;
-import Common.Click;
-import Common.VerifyElementStatus;
+import common.Click;
+import common.VerifyElementStatus;
 
 
 public class PDP extends PDPBaseClass 
 {
-	public void addToCart(int quantity)
+	public void addToCart(String quantity)
 	{
 		VerifyElementStatus.isElementPresent("xpath", "//button[@data-test-selector='btnAddToCart']");
 		
 		txtQuantity.clear();
 		
-		String quantityInCart = Integer.toString(quantity);
-		
-		txtQuantity.sendKeys(quantityInCart);
+		txtQuantity.sendKeys(quantity);
 		
 		VerifyElementStatus.isElementClickable(btnAddToCart);
 		

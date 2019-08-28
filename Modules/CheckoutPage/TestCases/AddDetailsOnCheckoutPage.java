@@ -2,40 +2,41 @@ package CheckoutPage.TestCases;
 
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import CheckoutPage.TestMethods.CheckOutPage;
 import Classes.TestBaseClass;
-import Common.BrowserCapability;
 import OrderReceipt.TestMethods.OrderReceipt;
-import Driver.DriverManager;
+import CheckoutPage.TestMethods.CheckOutPage;
+import driver.DriverManager;
 
 public class AddDetailsOnCheckoutPage extends TestBaseClass
 {
-	CheckOutPage objPage;
+	CheckOutPage checkoutpage;
 	
-	OrderReceipt objOrdRec;
+	OrderReceipt orderreceipt;
 	
 	String dataFilePath;
 	
-	AddDetailsOnCheckoutPage()
+	@BeforeClass
+	private void initiateCheckoutPage()
 	{
+		checkoutpage = PageFactory.initElements(DriverManager.getDriver().webDriver, CheckOutPage.class);
+		
+		orderreceipt = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
+		
 		dataFilePath = getProperty("config.properties", "checkoutPageDataFilePath");
 	}
 	
 	@Test(priority = 1)
 	private void addShippingAddress()
 	{
-		objPage = PageFactory.initElements(DriverManager.getDriver().webDriver, CheckOutPage.class);
-		
-		objPage.addShippingAddrForRegUser();
+		checkoutpage.addShippingAddrForRegUser();
 	}
 	
 	@Test(priority = 2)
 	private void selectShippingOption()
 	{
-//		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
-		
-		objPage.selectShippingOption();
+		checkoutpage.selectShippingOption();
 	} 
 	
 	@Test(priority = 3)
@@ -43,17 +44,15 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	{
 		setDataFile(dataFilePath, "PaymentOptions");
 		
-		objPage.selectPaymentOption(getData("WorldPay", "Options"));
+		checkoutpage.selectPaymentOption(getData("Braintree", "Options"));
 	} 
 	
 	@Test(priority = 4)
 	void enterPaymentDetails()
 	{
-//		objPage = PageFactory.initElements(Browser.webDriver, CheckOutPage.class);
-		
 		setDataFile(dataFilePath, "CreditCardDetails");
 		
-		objPage.addPaymentDetails(getData("Visa", "CreditCardType"), getData("Visa", "CardHolderName"), 
+		checkoutpage.addPaymentDetails(getData("Visa", "CreditCardType"), getData("Visa", "CardHolderName"), 
 		getData("Visa", "CardNumber"), getData("Visa", "CardExpDate"), getData("Visa", "CardExpYear"), 
 		getData("Visa", "CardCVVNumber"));
 	} 
@@ -62,14 +61,12 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	@Test(priority = 5)
 	private void clickOnPlaceOrder()
 	{
-		objPage.clickOnPlaceOrderButton();
+		checkoutpage.clickOnPlaceOrderButton();
 	}
 	
 	@Test(priority = 6)
 	private void clickOnContinueShopping()
 	{
-		objOrdRec = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
-		
-		objOrdRec.clickOnContinueShopping();
+		orderreceipt.clickOnContinueShopping();
 	}
 }
