@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-PlaceAnOrder" class="navigator-link ">
-                    <span>D:\Znode Workspace\Webstore\Test Suites\PlaceOrder\PlaceOrderByRegisteredUser.xml</span>
+                    <span>D:\Znode Workspace\Webstore\test suites\PlaceOrder\PlaceOrderByRegisteredUser.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,12 +102,12 @@
                     <div class="method-list-content failed suite-PlaceAnOrder">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="CheckoutPage.TestCases.AddDetailsOnCheckoutPage" class="method navigator-link" hash-for-method="clickOnContinueShopping">clickOnContinueShopping</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="CheckoutPage.TestCases.AddDetailsOnCheckoutPage" class="method navigator-link" hash-for-method="addShippingAddress">addShippingAddress</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="TestCases.ClickOnShoppingCartLink" class="method navigator-link" hash-for-method="goToShoppingCart">goToShoppingCart</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="CheckoutPage.TestCases.AddDetailsOnCheckoutPage" class="method navigator-link" hash-for-method="clickOnContinueShopping">clickOnContinueShopping</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -127,11 +127,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-PlaceAnOrder" title="PDP.TestCases.AddProductToCart" class="method navigator-link" hash-for-method="addAProductToCart">addAProductToCart</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="CheckoutPage.TestCases.AddDetailsOnCheckoutPage" class="method navigator-link" hash-for-method="addShippingAddress">addShippingAddress</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -161,17 +156,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="TestCases.ClickOnCheckoutLink" class="method navigator-link" hash-for-method="goToCheckoutPage">goToCheckoutPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="testcases.ClickOnCheckoutLink" class="method navigator-link" hash-for-method="goToCheckoutPage">goToCheckoutPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="TestCases.RemoveAllItemsFromCart" class="method navigator-link" hash-for-method="navigateToHomePage">navigateToHomePage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="testcases.ClickOnShoppingCartLink" class="method navigator-link" hash-for-method="goToShoppingCart">goToShoppingCart</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-PlaceAnOrder" title="TestCases.RemoveAllItemsFromCart" class="method navigator-link" hash-for-method="removeAllItems">removeAllItems</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="testcases.RemoveAllItemsFromCart" class="method navigator-link" hash-for-method="navigateToHomePage">navigateToHomePage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-PlaceAnOrder" title="testcases.RemoveAllItemsFromCart" class="method navigator-link" hash-for-method="removeAllItems">removeAllItems</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -199,65 +199,61 @@
           <div class="suite-PlaceAnOrder-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestCases.ClickOnShoppingCartLink</span>
+              <span class="class-name">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="goToShoppingCart">
-                  </a> <!-- goToShoppingCart -->
-                  <span class="method-name">goToShoppingCart</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;i class=&quot;f-size zf-cart header-toolbar-cart&quot; data-test-selector=&quot;linkCart&quot;&gt;&lt;/i&gt; is not clickable at point (1518, 67). Other element would receive the click: &lt;div id=&quot;loader-content-backdrop&quot; class=&quot;modal-backdrop fade in&quot;&gt;...&lt;/div&gt;
+                  <a name="addShippingAddress">
+                  </a> <!-- addShippingAddress -->
+                  <span class="method-name">addShippingAddress</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;address_name&apos;]&quot;}
   (Session info: chrome=76.0.3809.132)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: fc3283a5c2536e9fe22cc23a164b5750
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57257}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 71684dcf61ee02a1243ac90039b2946c
+*** Element info: {Using=xpath, value=//input[@id=&apos;address_name&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy17.click(Unknown Source)
-	at Common.Click.clickAndWait(Click.java:19)
-	at TestMethods.Navigate.navigateToShoppingCart(Navigate.java:26)
-	at TestCases.ClickOnShoppingCartLink.goToShoppingCart(ClickOnShoppingCartLink.java:17)
-... Removed 33 stack frames
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy17.isDisplayed(Unknown Source)
+	at CheckoutPage.TestMethods.CheckOutPage.addShippingAddrForRegUser(CheckOutPage.java:22)
+	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.addShippingAddress(AddDetailsOnCheckoutPage.java:35)
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-PlaceAnOrder-class-failed -->
-          <div class="suite-PlaceAnOrder-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="clickOnContinueShopping">
                   </a> <!-- clickOnContinueShopping -->
                   <span class="method-name">clickOnContinueShopping</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[text()=&apos;Continue shopping&apos;]&apos; (tried for 30 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //a[text()=&apos;Continue shopping&apos;]&apos; (tried for 2 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Common.MyWait.waitTill(MyWait.java:90)
-	at OrderReceipt.TestMethods.OrderReceipt.clickOnContinueShopping(OrderReceipt.java:12)
-	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.clickOnContinueShopping(AddDetailsOnCheckoutPage.java:70)
+	at common.MyWait.waitTill(MyWait.java:91)
+	at OrderReceipt.TestMethods.OrderReceipt.clickOnContinueShopping(OrderReceipt.java:10)
+	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.clickOnContinueShopping(AddDetailsOnCheckoutPage.java:72)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[text()=&apos;Continue shopping&apos;]&quot;}
   (Session info: chrome=76.0.3809.132)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: fc3283a5c2536e9fe22cc23a164b5750
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57257}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 71684dcf61ee02a1243ac90039b2946c
 *** Element info: {Using=xpath, value=//a[text()=&apos;Continue shopping&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -278,7 +274,7 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
 	... 28 more
-... Removed 28 stack frames
+... Removed 29 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -287,18 +283,28 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
                   <a name="selectShippingOption">
                   </a> <!-- selectShippingOption -->
                   <span class="method-name">selectShippingOption</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on XP (fc3283a5c2536e9fe22cc23a164b5750)] -&gt; xpath: //label[@data-test-selector=&apos;lblShipping&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label data-test-selector=&quot;lblShipping&quot; for=&quot;FLAT&quot;&gt;...&lt;/label&gt; is not clickable at point (750, 749). Other element would receive the click: &lt;div id=&quot;Single-loader-content-backdrop&quot; class=&quot;modal-backdrop fade in&quot; style=&quot;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=76.0.3809.132)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;ACD-002&apos;, ip: &apos;10.0.12.75&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:55138}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: fc3283a5c2536e9fe22cc23a164b5750
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at Common.MyWait.waitTill(MyWait.java:92)
-	at CheckoutPage.TestMethods.CheckOutPage.selectShippingOption(CheckOutPage.java:71)
-	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.selectShippingOption(AddDetailsOnCheckoutPage.java:39)
-... Removed 25 stack frames
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.132, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: C:\Users\SANKET~1.KHI\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57257}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 71684dcf61ee02a1243ac90039b2946c
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy17.click(Unknown Source)
+	at common.Click.clickAndWait(Click.java:16)
+	at Classes.TestBaseClass.clickAndWait(TestBaseClass.java:59)
+	at CheckoutPage.TestMethods.CheckOutPage.selectShippingOption(CheckOutPage.java:93)
+	at CheckoutPage.TestCases.AddDetailsOnCheckoutPage.selectShippingOption(AddDetailsOnCheckoutPage.java:41)
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -307,14 +313,28 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
           <div class="suite-PlaceAnOrder-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">PDP.TestCases.AddProductToCart</span>
+              <span class="class-name">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addAProductToCart">
-                  </a> <!-- addAProductToCart -->
-                  <span class="method-name">addAProductToCart</span>
+                  <a name="clickOnPlaceOrder">
+                  </a> <!-- clickOnPlaceOrder -->
+                  <span class="method-name">clickOnPlaceOrder</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="enterPaymentDetails">
+                  </a> <!-- enterPaymentDetails -->
+                  <span class="method-name">enterPaymentDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="selectPaymentOption">
+                  </a> <!-- selectPaymentOption -->
+                  <span class="method-name">selectPaymentOption</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -322,7 +342,7 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
           <div class="suite-PlaceAnOrder-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestCases.RemoveAllItemsFromCart</span>
+              <span class="class-name">testcases.RemoveAllItemsFromCart</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -344,36 +364,14 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
           <div class="suite-PlaceAnOrder-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestCases.ClickOnCheckoutLink</span>
+              <span class="class-name">testcases.ClickOnShoppingCartLink</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="goToCheckoutPage">
-                  </a> <!-- goToCheckoutPage -->
-                  <span class="method-name">goToCheckoutPage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-PlaceAnOrder-class-passed -->
-          <div class="suite-PlaceAnOrder-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">Login.TestCases.Login</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickOnLoginLink">
-                  </a> <!-- clickOnLoginLink -->
-                  <span class="method-name">clickOnLoginLink</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="enterLoginCredentials">
-                  </a> <!-- enterLoginCredentials -->
-                  <span class="method-name">enterLoginCredentials</span>
+                  <a name="goToShoppingCart">
+                  </a> <!-- goToShoppingCart -->
+                  <span class="method-name">goToShoppingCart</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -403,35 +401,51 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
           <div class="suite-PlaceAnOrder-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</span>
+              <span class="class-name">testcases.ClickOnCheckoutLink</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addShippingAddress">
-                  </a> <!-- addShippingAddress -->
-                  <span class="method-name">addShippingAddress</span>
+                  <a name="goToCheckoutPage">
+                  </a> <!-- goToCheckoutPage -->
+                  <span class="method-name">goToCheckoutPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PlaceAnOrder-class-passed -->
+          <div class="suite-PlaceAnOrder-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">PDP.TestCases.AddProductToCart</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addAProductToCart">
+                  </a> <!-- addAProductToCart -->
+                  <span class="method-name">addAProductToCart</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-PlaceAnOrder-class-passed -->
+          <div class="suite-PlaceAnOrder-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Login.TestCases.Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="clickOnLoginLink">
+                  </a> <!-- clickOnLoginLink -->
+                  <span class="method-name">clickOnLoginLink</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="clickOnPlaceOrder">
-                  </a> <!-- clickOnPlaceOrder -->
-                  <span class="method-name">clickOnPlaceOrder</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="enterPaymentDetails">
-                  </a> <!-- enterPaymentDetails -->
-                  <span class="method-name">enterPaymentDetails</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="selectPaymentOption">
-                  </a> <!-- selectPaymentOption -->
-                  <span class="method-name">selectPaymentOption</span>
+                  <a name="enterLoginCredentials">
+                  </a> <!-- enterLoginCredentials -->
+                  <span class="method-name">enterLoginCredentials</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -439,7 +453,7 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
         </div> <!-- panel PlaceAnOrder -->
         <div panel-name="test-xml-PlaceAnOrder" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Znode Workspace\Webstore\Test Suites\PlaceOrder\PlaceOrderByRegisteredUser.xml</span>
+            <span class="header-content">D:\Znode Workspace\Webstore\test suites\PlaceOrder\PlaceOrderByRegisteredUser.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -450,12 +464,12 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
     &lt;parameter name=&quot;Environment&quot; value=&quot;qa&quot;/&gt;
     &lt;parameter name=&quot;Browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;packages&gt;
-      &lt;package name=&quot;Driver&quot;/&gt;
+      &lt;package name=&quot;driver&quot;/&gt;
     &lt;/packages&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Driver.DriverClass&quot;/&gt;
-      &lt;class name=&quot;Driver.DriverFactory&quot;/&gt;
-      &lt;class name=&quot;Driver.DriverManager&quot;/&gt;
+      &lt;class name=&quot;driver.DriverClass&quot;/&gt;
+      &lt;class name=&quot;driver.DriverFactory&quot;/&gt;
+      &lt;class name=&quot;driver.DriverManager&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- open-browser --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;log-in&quot;&gt;
@@ -465,7 +479,7 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
   &lt;/test&gt; &lt;!-- log-in --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;remove-cart-items&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.RemoveAllItemsFromCart&quot;/&gt;
+      &lt;class name=&quot;testcases.RemoveAllItemsFromCart&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- remove-cart-items --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;navigate-to-PDP&quot;&gt;
@@ -480,12 +494,12 @@ Session ID: fc3283a5c2536e9fe22cc23a164b5750
   &lt;/test&gt; &lt;!-- add-product-to-cart --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;click-on-shopping-cart&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.ClickOnShoppingCartLink&quot;/&gt;
+      &lt;class name=&quot;testcases.ClickOnShoppingCartLink&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- click-on-shopping-cart --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;click-on-checkout-page&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.ClickOnCheckoutLink&quot;/&gt;
+      &lt;class name=&quot;testcases.ClickOnCheckoutLink&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- click-on-checkout-page --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;checkout&quot;&gt;
@@ -555,68 +569,68 @@ data.addRows(15);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'selectShippingOption')
 data.setCell(0, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(0, 3, 46001);
+data.setCell(0, 3, 15487);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'clickOnContinueShopping')
-data.setCell(1, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(1, 3, 31588);
+data.setCell(1, 1, 'navigateToHomePage')
+data.setCell(1, 2, 'testcases.RemoveAllItemsFromCart')
+data.setCell(1, 3, 4006);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'goToCheckoutPage')
-data.setCell(2, 2, 'TestCases.ClickOnCheckoutLink')
-data.setCell(2, 3, 14693);
+data.setCell(2, 1, 'clickOnContinueShopping')
+data.setCell(2, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
+data.setCell(2, 3, 3620);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'enterLoginCredentials')
-data.setCell(3, 2, 'Login.TestCases.Login')
-data.setCell(3, 3, 4557);
+data.setCell(3, 1, 'goToCheckoutPage')
+data.setCell(3, 2, 'testcases.ClickOnCheckoutLink')
+data.setCell(3, 3, 3586);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'navigateToHomePage')
-data.setCell(4, 2, 'TestCases.RemoveAllItemsFromCart')
-data.setCell(4, 3, 4028);
+data.setCell(4, 1, 'removeAllItems')
+data.setCell(4, 2, 'testcases.RemoveAllItemsFromCart')
+data.setCell(4, 3, 2899);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'searchForProduct')
-data.setCell(5, 2, 'HomePage.TestCases.NavigateToPDPPage')
-data.setCell(5, 3, 3359);
+data.setCell(5, 1, 'addAProductToCart')
+data.setCell(5, 2, 'PDP.TestCases.AddProductToCart')
+data.setCell(5, 3, 2331);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'clickOnAProductImage')
-data.setCell(6, 2, 'HomePage.TestCases.NavigateToPDPPage')
-data.setCell(6, 3, 2714);
+data.setCell(6, 1, 'enterLoginCredentials')
+data.setCell(6, 2, 'Login.TestCases.Login')
+data.setCell(6, 3, 1870);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'addShippingAddress')
-data.setCell(7, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(7, 3, 1209);
+data.setCell(7, 1, 'clickOnAProductImage')
+data.setCell(7, 2, 'HomePage.TestCases.NavigateToPDPPage')
+data.setCell(7, 3, 1726);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'addAProductToCart')
-data.setCell(8, 2, 'PDP.TestCases.AddProductToCart')
-data.setCell(8, 3, 1032);
+data.setCell(8, 1, 'goToShoppingCart')
+data.setCell(8, 2, 'testcases.ClickOnShoppingCartLink')
+data.setCell(8, 3, 1448);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'clickOnLoginLink')
-data.setCell(9, 2, 'Login.TestCases.Login')
-data.setCell(9, 3, 926);
+data.setCell(9, 1, 'searchForProduct')
+data.setCell(9, 2, 'HomePage.TestCases.NavigateToPDPPage')
+data.setCell(9, 3, 1389);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'selectPaymentOption')
+data.setCell(10, 1, 'addShippingAddress')
 data.setCell(10, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(10, 3, 549);
+data.setCell(10, 3, 1283);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'clickOnPlaceOrder')
+data.setCell(11, 1, 'selectPaymentOption')
 data.setCell(11, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(11, 3, 347);
+data.setCell(11, 3, 1211);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'enterPaymentDetails')
-data.setCell(12, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
-data.setCell(12, 3, 257);
+data.setCell(12, 1, 'clickOnLoginLink')
+data.setCell(12, 2, 'Login.TestCases.Login')
+data.setCell(12, 3, 781);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'goToShoppingCart')
-data.setCell(13, 2, 'TestCases.ClickOnShoppingCartLink')
-data.setCell(13, 3, 156);
+data.setCell(13, 1, 'clickOnPlaceOrder')
+data.setCell(13, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
+data.setCell(13, 3, 369);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'removeAllItems')
-data.setCell(14, 2, 'TestCases.RemoveAllItemsFromCart')
-data.setCell(14, 3, 106);
+data.setCell(14, 1, 'enterPaymentDetails')
+data.setCell(14, 2, 'CheckoutPage.TestCases.AddDetailsOnCheckoutPage')
+data.setCell(14, 3, 293);
 window.suiteTableData['PlaceAnOrder']= { tableData: data, tableDiv: 'times-div-PlaceAnOrder'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
               <div id="times-div-PlaceAnOrder">
               </div> <!-- times-div-PlaceAnOrder -->
             </div> <!-- times-div -->
@@ -642,125 +656,125 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Driver.DriverClass</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">driver.DriverClass</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">driverSetup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">openBrowser(chrome, qa)</span>
-                <span class="method-start">3493 ms</span>
+                <span class="method-start">3350 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Login.TestCases.Login</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initiatedDriver</span>
-                <span class="method-start">8802 ms</span>
+                <span class="method-start">7728 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">initiateLoginPage</span>
-                <span class="method-start">8802 ms</span>
+                <span class="method-start">7728 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">clickOnLoginLink</span>
-                <span class="method-start">8835 ms</span>
+                <span class="method-start">7775 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterLoginCredentials</span>
-                <span class="method-start">9764 ms</span>
+                <span class="method-start">8559 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.RemoveAllItemsFromCart</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testcases.RemoveAllItemsFromCart</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">removeAllItems</span>
-                <span class="method-start">14329 ms</span>
+                <span class="method-start">10438 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">navigateToHomePage</span>
-                <span class="method-start">14436 ms</span>
+                <span class="method-start">13338 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">HomePage.TestCases.NavigateToPDPPage</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initiatePDPPage</span>
-                <span class="method-start">18474 ms</span>
+                <span class="method-start">17351 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">searchForProduct</span>
-                <span class="method-start">18479 ms</span>
+                <span class="method-start">17354 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickOnAProductImage</span>
-                <span class="method-start">21839 ms</span>
+                <span class="method-start">18744 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">PDP.TestCases.AddProductToCart</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initializePDPPage</span>
-                <span class="method-start">24560 ms</span>
+                <span class="method-start">20478 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">addAProductToCart</span>
-                <span class="method-start">24562 ms</span>
+                <span class="method-start">20480 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.ClickOnShoppingCartLink</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testcases.ClickOnShoppingCartLink</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">goToShoppingCart</span>
-                <span class="method-start">25600 ms</span>
+                <span class="method-start">22817 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.ClickOnCheckoutLink</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testcases.ClickOnCheckoutLink</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">goToCheckoutPage</span>
-                <span class="method-start">25777 ms</span>
+                <span class="method-start">24271 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">CheckoutPage.TestCases.AddDetailsOnCheckoutPage</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initiatedDriver</span>
-                <span class="method-start">40477 ms</span>
+                <span class="method-start">27863 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">initiateCheckoutPage</span>
-                <span class="method-start">40477 ms</span>
+                <span class="method-start">27863 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">addShippingAddress</span>
-                <span class="method-start">40485 ms</span>
+                <span class="method-start">27873 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">selectShippingOption</span>
-                <span class="method-start">41695 ms</span>
+                <span class="method-start">29160 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectPaymentOption</span>
-                <span class="method-start">87697 ms</span>
+                <span class="method-start">44649 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterPaymentDetails</span>
-                <span class="method-start">88247 ms</span>
+                <span class="method-start">45861 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickOnPlaceOrder</span>
-                <span class="method-start">88505 ms</span>
+                <span class="method-start">46155 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">clickOnContinueShopping</span>
-                <span class="method-start">88853 ms</span>
+                <span class="method-start">46525 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
