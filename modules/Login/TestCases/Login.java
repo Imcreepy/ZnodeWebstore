@@ -38,6 +38,6 @@ public class Login extends TestBaseClass
 	{
 		mapdatafile = setDataFile(GlobalVariables.loginPageDataFilePath, GlobalVariables.LoginCredentials);
 		
-		loginPage.login(mapdatafile.get(GlobalVariables.KeyStoreUserEmail), mapdatafile.get(GlobalVariables.KeyStoreUserPassword));
+		loginPage.login(mapdatafile.get("StoreUser"), mapdatafile.get("StoreUserPassword"));
 	}
 }

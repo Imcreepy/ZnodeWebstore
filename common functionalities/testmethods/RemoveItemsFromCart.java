@@ -2,8 +2,6 @@ package testmethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import Classes.TestBaseClass;
 import common.Click;
 import common.GlobalVariables;
 import common.VerifyElementStatus;

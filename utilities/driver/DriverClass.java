@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -75,4 +76,12 @@ public class DriverClass {
 		BrowserFunctionality.maximizeBrowser();
 		
 	}// End of openBrowser Method
+	
+
+	@AfterSuite
+	//Test cleanup
+	public void TeardownTest()
+	{
+		DriverManager.getDriver().webDriver.quit();
+	}
 }// End of Driver Class

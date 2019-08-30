@@ -1,9 +1,6 @@
 package CheckoutPage.TestCases;
 
-
-import java.util.HashMap;
 import java.util.Map;
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -46,7 +43,7 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	{
 		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
 		
-		checkoutpage.selectPaymentOption(mapdatafile.get(GlobalVariables.KeyBraintree));
+		checkoutpage.selectPaymentOption(mapdatafile.get("Payflow"));
 	} 
 	
 	@Test(priority = 4)
@@ -54,11 +51,13 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	{
 		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.CreditCardDetailsSheet);
 		
-		checkoutpage.addPaymentDetails(mapdatafile.get(GlobalVariables.KeyVisaCreditCardType), mapdatafile.get(GlobalVariables.KeyVisaCardHolderName), 
-				mapdatafile.get(GlobalVariables.KeyVisaCardNumber), mapdatafile.get(GlobalVariables.KeyVisaCardExpDate), mapdatafile.get(GlobalVariables.KeyVisaCardExpYear), 
-				mapdatafile.get(GlobalVariables.KeyVisaCardCVVNumber));
+		String visaExpDate = mapdatafile.get("VisaCardExpDate").substring(0, mapdatafile.get("VisaCardExpDate").indexOf("."));
+		String visaExpYear = mapdatafile.get("VisaCardExpYear").substring(0, mapdatafile.get("VisaCardExpYear").indexOf("."));
+		String visaCVVNo = mapdatafile.get("VisaCardCVVNumber").substring(0, mapdatafile.get("VisaCardCVVNumber").indexOf("."));
+		
+		checkoutpage.addPaymentDetails(mapdatafile.get("VisaCreditCardType"), mapdatafile.get("VisaCardHolderName"), 
+				mapdatafile.get("VisaCardNumber"), visaExpDate, visaExpYear, visaCVVNo);
 	} 
-	
 	
 	@Test(priority = 5)
 	private void clickOnPlaceOrder()

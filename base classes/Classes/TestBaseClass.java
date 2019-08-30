@@ -1,7 +1,6 @@
 package Classes;
 
 import java.util.Map;
-import java.util.Properties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
@@ -11,8 +10,8 @@ import common.DataFile;
 import common.PropertyFile;
 import common.Scroll;
 import common.SendKeys;
+import common.VerifyElementStatus;
 import driver.DriverManager;
-
 
 public class TestBaseClass 
 {
@@ -50,8 +49,6 @@ public class TestBaseClass
 		SendKeys.setText(element, inputText);
 	}
 	
-	
-	
 	protected void clickAndWait(WebElement element)
 	{
 		Click click = new Click();
@@ -67,6 +64,16 @@ public class TestBaseClass
 	protected void scrollToElement(WebElement element)
 	{
 		Scroll.scrollToElement(element);
+	}
+	
+	protected void waitForElementToBeVisible(WebElement element)
+	{
+		VerifyElementStatus.isElementVisible(element);
+	}
+	
+	protected void waitForElementToBeInvisible(WebElement element)
+	{
+		VerifyElementStatus.isElementNotVisible(element);
 	}
 } // End of class
 

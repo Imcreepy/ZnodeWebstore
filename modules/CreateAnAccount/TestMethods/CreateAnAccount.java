@@ -1,8 +1,6 @@
 package CreateAnAccount.TestMethods;
 
 import Classes.CreateAnAccountBaseClass;
-import common.Click;
-import common.VerifyElementStatus;
 
 public class CreateAnAccount extends CreateAnAccountBaseClass
 {	
@@ -12,13 +10,13 @@ public class CreateAnAccount extends CreateAnAccountBaseClass
 		
 		clickAndWait(linkGetAnAccount);
 		
-		VerifyElementStatus.isElementVisible(txtUsername);
+		waitForElementToBeVisible(txtUsername);
 		
-		txtUsername.sendKeys(userName);
+		setText(txtUsername, userName);
 		
-		txtPassword.sendKeys(password);
+		setText(txtPassword, password);
 		
-		txtReTypePassword.sendKeys(password);
+		setText(txtReTypePassword, password);
 		
 		clickAndWait(btnCreateAccount);
 	}

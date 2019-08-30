@@ -4,7 +4,6 @@ import Classes.PDPBaseClass;
 import common.GlobalVariables;
 import common.VerifyElementStatus;
 
-
 public class PDP extends PDPBaseClass 
 {
 	public void addToCart(String quantity)

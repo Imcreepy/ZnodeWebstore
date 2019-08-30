@@ -2,12 +2,13 @@ package OrderReceipt.TestMethods;
 
 import Classes.OrderReceiptBaseClass;
 import common.MyWait;
+import common.VerifyElementStatus;
 
 public class OrderReceipt extends OrderReceiptBaseClass
 {
 	public void clickOnContinueShopping()
 	{	
-		MyWait.waitTill("verylong", "isvisible", linkContinueShopping);
+		waitForElementToBeVisible(linkContinueShopping);
 		
 		clickAndWait(linkContinueShopping);	
 	}

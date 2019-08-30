@@ -7,10 +7,9 @@ import HomePage.TestMethods.HomePage;
 import driver.DriverManager;
 import testmethods.Search;
 
-
 public class NavigateToPDPPage {
 
-	HomePage home;
+	HomePage homepage;
 	
 	Search search;
 	
@@ -19,7 +18,7 @@ public class NavigateToPDPPage {
 	{
 		search = PageFactory.initElements(DriverManager.getDriver().webDriver, Search.class);
 		
-		home = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
+		homepage = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
 	}
 	
 	@Test(priority=0)
@@ -31,6 +30,6 @@ public class NavigateToPDPPage {
 	@Test(priority=1)
 	private void clickOnAProductImage()
 	{
-		home.ClickOnProductImage();
+		homepage.ClickOnProductImage();
 	}
 }

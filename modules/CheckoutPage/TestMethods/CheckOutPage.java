@@ -14,14 +14,13 @@ public class CheckOutPage extends CheckOutBaseClass
 	
 	public void addShippingAddrForRegUser()
 	{
-		
 		try
 		{
 			mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.AddressSheet);
 			
 			if (displayName.isDisplayed())
 			{
-				setText(displayName, mapdatafile.get(GlobalVariables.KeyShippingDisplayName));
+				setText(displayName, mapdatafile.get("ShippingDisplayName"));
 				
 				addShippingAddress();
 				
@@ -43,29 +42,34 @@ public class CheckOutPage extends CheckOutBaseClass
 		{
 			ex.printStackTrace();
 		}
+		
+		catch (Exception ex)
+		{
+			ex.printStackTrace();
+		}
 	}
 	
 	private void addShippingAddress()
 	{
 		try
 		{
-			setText(txtAddressFirstname, mapdatafile.get(GlobalVariables.KeyShippingFirstName));
+			setText(txtAddressFirstname, mapdatafile.get("ShippingFirstName"));
 			
-			setText(txtAddressLastname, mapdatafile.get(GlobalVariables.KeyShippingLastName));
+			setText(txtAddressLastname, mapdatafile.get("ShippingLastName"));
 			
-			setText(txtAddressStreet1, mapdatafile.get(GlobalVariables.KeyShippingStreetAddress1));
+			setText(txtAddressStreet1, mapdatafile.get("ShippingStreetAddress1"));
 			
-			setText(txtPhoneNumber, mapdatafile.get(GlobalVariables.KeyShippingPhoneNumber));
+			setText(txtPhoneNumber, mapdatafile.get("ShippingPhoneNumber"));
 			
-			setText(txtCompanyName, mapdatafile.get(GlobalVariables.KeyShippingCompanyName));
+			setText(txtCompanyName, mapdatafile.get("ShippingCompanyName"));
 			
-			setText(txtCityName, mapdatafile.get(GlobalVariables.KeyShippingCity));
+			setText(txtCityName, mapdatafile.get("ShippingCity"));
 			
-			selectOptionByName(drpState, mapdatafile.get(GlobalVariables.KeyShippingState));
+			selectOptionByName(drpState, mapdatafile.get("ShippingState"));
 			
-			selectOptionByName(drpCountryName, mapdatafile.get(GlobalVariables.KeyShippingCountry));
+			selectOptionByName(drpCountryName, mapdatafile.get("ShippingCountry"));
 			
-			setText(txtPostalCode, mapdatafile.get(GlobalVariables.KeyShippingPostalCode));
+			setText(txtPostalCode, mapdatafile.get("ShippingPostalCode"));
 		}
 		
 		catch (NullPointerException ex)
@@ -86,9 +90,9 @@ public class CheckOutPage extends CheckOutBaseClass
 	
 	public void selectShippingOption()
 	{
-		VerifyElementStatus.isElementNotVisible(loadingShippingOptions);
-		
-		VerifyElementStatus.isElementNotVisible(GlobalVariables.FindByXpath, GlobalVariables.Loader);
+		waitForElementToBeInvisible(loadingShippingOptions);
+
+//		VerifyElementStatus.isElementNotVisible(GlobalVariables.FindByXpath, GlobalVariables.Loader);
 			
 		clickAndWait(chkShippingOption);
 	}
@@ -101,22 +105,22 @@ public class CheckOutPage extends CheckOutBaseClass
 		
 		scrollToElement(chkPaymentOption_WORLDPAY);
 		
-		if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyCOD)))
+		if (paymentOption.equalsIgnoreCase(mapdatafile.get("COD")))
 			clickAndWait(chkPaymentOption_COD);
 		
-		else if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyPaypalExpress)))
+		else if (paymentOption.equalsIgnoreCase(mapdatafile.get("PaypalExpress")))
 			clickAndWait(chkPaymentOption_PAYPAL);
 		
-		else if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyBraintree)))
+		else if (paymentOption.equalsIgnoreCase(mapdatafile.get("Braintree")))
 			clickAndWait(chkPaymentOption_BRAINTREE);
 		
-		else if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyPayflow)))
+		else if (paymentOption.equalsIgnoreCase(mapdatafile.get("Payflow")))
 			clickAndWait(chkPaymentOption_PAYFLOW);
 		
-		else if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyWorldPay)))
+		else if (paymentOption.equalsIgnoreCase(mapdatafile.get("WorldPay")))
 			clickAndWait(chkPaymentOption_WORLDPAY);
 		
-		else if (paymentOption.equalsIgnoreCase(mapdatafile.get(GlobalVariables.KeyPurchaseOrder)))
+		else if (paymentOption.equalsIgnoreCase(mapdatafile.get("PurchaseOrder")))
 			clickAndWait(chkPaymentOption_PO);
 	}
 	

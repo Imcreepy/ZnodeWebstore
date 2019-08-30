@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [PlaceAnOrder]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="add-product-to-cart(failed)">
+    <classes>
+      <class name="PDP.TestCases.AddProductToCart">
+        <methods>
+          <include name="addAProductToCart"/>
+          <include name="initializePDPPage"/>
+        </methods>
+      </class> <!-- PDP.TestCases.AddProductToCart -->
+    </classes>
+  </test> <!-- add-product-to-cart(failed) -->
+  <test thread-count="5" name="click-on-checkout-page(failed)">
+    <classes>
+      <class name="testcases.ClickOnCheckoutLink">
+        <methods>
+          <include name="goToCheckoutPage"/>
+        </methods>
+      </class> <!-- testcases.ClickOnCheckoutLink -->
+    </classes>
+  </test> <!-- click-on-checkout-page(failed) -->
   <test thread-count="5" name="checkout(failed)">
     <classes>
       <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
         <methods>
           <include name="initiateCheckoutPage"/>
-          <include name="addShippingAddress"/>
           <include name="selectShippingOption"/>
+          <include name="clickOnPlaceOrder"/>
           <include name="clickOnContinueShopping"/>
+          <include name="enterPaymentDetails"/>
+          <include name="selectPaymentOption"/>
           <include name="initiatedDriver"/>
         </methods>
       </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->

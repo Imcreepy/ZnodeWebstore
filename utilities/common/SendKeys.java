@@ -13,6 +13,8 @@ public class SendKeys
 		String js = "arguments[0].setAttribute('value','"+inputText+"')";
 		
 		((JavascriptExecutor) DriverManager.getDriver().webDriver).executeScript(js, element);
+		
+//		element.sendKeys(inputText);
 	}
 	
 	public static void setText(WebElement element, int inputText)

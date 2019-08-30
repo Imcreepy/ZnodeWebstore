@@ -70,7 +70,7 @@ public class CheckOutBaseClass extends TestBaseClass {
 	@FindBy(xpath = "//label[@for='CREDIT_CARDBraintree']")
 	 protected WebElement chkPaymentOption_BRAINTREE;
 	
-	@FindBy(xpath = "//label[@for='CREDIT_CARDPayflow']")
+	@FindBy(xpath = "//label[@for='CREDIT_CARDPayFlowNew']")
 	 protected WebElement chkPaymentOption_PAYFLOW;
 	
 	@FindBy(xpath = "//label[@for='CREDIT_CARDWorldPay']")

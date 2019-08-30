@@ -10,11 +10,10 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class DataFile {
-
+public class DataFile 
+{
 	Sheet sheet;
 	int lastRow;
 	private Workbook workbook;
@@ -30,64 +29,74 @@ public class DataFile {
 		
 		FileInputStream fis;
 		
-		try {
-				File file = new File(pathTillProject + filePath);
+		try 
+		{
+			File file = new File(pathTillProject + filePath);
+		
+			fis = new FileInputStream(file);
 			
-				fis = new FileInputStream(file);
-				
-				if (file.getName().endsWith(".xls"))
-				{
+			if (file.getName().endsWith(".xls"))
+			{
+				//If it is xlsx file then create object of HSSFWorkbook class
+				workbook = new HSSFWorkbook(fis);
+			}
+			
+			else if (file.getName().endsWith(".xlsx"))
+			{
 				//If it is xlsx file then create object of XSSFWorkbook class
-					workbook = new HSSFWorkbook(fis);
-				}
+				workbook = new XSSFWorkbook(fis);
+			}
 				
-				else if (file.getName().endsWith(".xlsx"))
-				{
-					workbook = new XSSFWorkbook(fis);
-				}
-					
-				sheet = workbook.getSheet(sheetName);
-					
-				lastRow = sheet.getLastRowNum();
+			sheet = workbook.getSheet(sheetName);
 				
-			   //Looping over entire row
-				for(int i=1; i <= lastRow; i++)
-				{
-
-				Row row = sheet.getRow(i);
-				String celldata = row.getCell(0).getStringCellValue();
-
-				if(celldata == null || "".equals(celldata))
-				{
-					continue;
-				}
-				else
-				{
-					dataMap.put(row.getCell(0).toString(), row.getCell(1).toString());
-//					dataMap.put(row.getCell(0).toString(),row.getCell(1).toString());
-					
-				} 
-			}	
+			lastRow = sheet.getLastRowNum();
+			
+			mapDataFile();	
 		}
 	
-		catch (NullPointerException e) {
-			// TODO Auto-generated catch block
+		catch (NullPointerException e) 
+		{
 			e.printStackTrace();
 		}
 		
-		catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		catch (FileNotFoundException e) 
+		{
 			e.printStackTrace();
 		}
-		//Returning excelFileMap
+		
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		//Returning dataMap
 		return dataMap;
-		
 	}
 
+	private void mapDataFile()
+	{
+		 //Looping over entire row
+		for(int i=1; i <= lastRow; i++)
+		{
+			Row row = sheet.getRow(i);
+			
+			String celldata = row.getCell(0).getStringCellValue();
 	
+			if(celldata == null || "".equals(celldata))
+			{
+				continue;
+			} // End of if condition
+			
+			else
+			{
+				dataMap.put(row.getCell(0).toString(), row.getCell(1).toString());			
+			} // End of else condition
+		}// End of for loop
+	}
+}// End of class
+
+
+
 //	public String getData(String key)
 //	{
 //		try 
@@ -118,7 +127,7 @@ public class DataFile {
 //			}
 //		}
 
-	}
+
 
 
 
