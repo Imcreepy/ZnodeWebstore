@@ -8,10 +8,10 @@ import driver.DriverManager;
 
 public class Click {
 
-	Loader loader = new Loader();
+	static Loader loader = new Loader();
 	
 	// To click on respective element and wait until page loads using WebElement
-	public void clickAndWait(WebElement element)
+	public static void clickAndWait(WebElement element)
 	{
 		element.click();
 		
@@ -21,7 +21,7 @@ public class Click {
 	}
 	
 	// To click on respective element and wait until page loads using Locator
-	public void clickAndWait(String locator)
+	public static void clickAndWait(String locator)
 	{
 		try
 		{

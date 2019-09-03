@@ -7,12 +7,18 @@ import org.testng.annotations.Test;
 import Classes.TestBaseClass;
 import OrderReceipt.TestMethods.OrderReceipt;
 import common.GlobalVariables;
-import CheckoutPage.TestMethods.CheckOutPage;
+import CheckoutPage.TestMethods.AddAddress;
+import CheckoutPage.TestMethods.PaymentOption;
+import CheckoutPage.TestMethods.ShippingOption;
 import driver.DriverManager;
 
 public class AddDetailsOnCheckoutPage extends TestBaseClass
 {
-	CheckOutPage checkoutpage;
+	AddAddress addaddress;
+	
+	PaymentOption paymentoption;
+	
+	ShippingOption shippingoption;
 	
 	OrderReceipt orderreceipt;
 	
@@ -21,7 +27,11 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	@BeforeClass
 	private void initiateCheckoutPage()
 	{
-		checkoutpage = PageFactory.initElements(DriverManager.getDriver().webDriver, CheckOutPage.class);
+		addaddress = PageFactory.initElements(DriverManager.getDriver().webDriver, AddAddress.class);
+		
+		paymentoption = PageFactory.initElements(DriverManager.getDriver().webDriver, PaymentOption.class);
+		
+		shippingoption = PageFactory.initElements(DriverManager.getDriver().webDriver, ShippingOption.class);
 		
 		orderreceipt = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
 	}
@@ -29,13 +39,13 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	@Test(priority = 1)
 	private void addShippingAddress()
 	{
-		checkoutpage.addShippingAddrForRegUser();
+		addaddress.addShippingAddrForRegUser();
 	}
 	
 	@Test(priority = 2)
 	private void selectShippingOption()
 	{
-		checkoutpage.selectShippingOption();
+		shippingoption.selectShippingOption();
 	} 
 	
 	@Test(priority = 3)
@@ -43,26 +53,26 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	{
 		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
 		
-		checkoutpage.selectPaymentOption(mapdatafile.get("Payflow"));
+		paymentoption.selectPaymentOption(getValueOf("Payflow"));
 	} 
 	
 	@Test(priority = 4)
-	void enterPaymentDetails()
+	private void enterPaymentDetails()
 	{
 		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.CreditCardDetailsSheet);
 		
-		String visaExpDate = mapdatafile.get("VisaCardExpDate").substring(0, mapdatafile.get("VisaCardExpDate").indexOf("."));
-		String visaExpYear = mapdatafile.get("VisaCardExpYear").substring(0, mapdatafile.get("VisaCardExpYear").indexOf("."));
-		String visaCVVNo = mapdatafile.get("VisaCardCVVNumber").substring(0, mapdatafile.get("VisaCardCVVNumber").indexOf("."));
+		String visaExpDate = getValueOf("VisaCardExpDate").substring(0, getValueOf("VisaCardExpDate").indexOf("."));
+		String visaExpYear = getValueOf("VisaCardExpYear").substring(0, getValueOf("VisaCardExpYear").indexOf("."));
+		String visaCVVNo = getValueOf("VisaCardCVVNumber").substring(0, getValueOf("VisaCardCVVNumber").indexOf("."));
 		
-		checkoutpage.addPaymentDetails(mapdatafile.get("VisaCreditCardType"), mapdatafile.get("VisaCardHolderName"), 
-				mapdatafile.get("VisaCardNumber"), visaExpDate, visaExpYear, visaCVVNo);
+		paymentoption.addPaymentDetails(getValueOf("VisaCreditCardType"), getValueOf("VisaCardHolderName"), 
+				getValueOf("VisaCardNumber"), visaExpDate, visaExpYear, visaCVVNo);
 	} 
 	
 	@Test(priority = 5)
 	private void clickOnPlaceOrder()
 	{
-		checkoutpage.clickOnPlaceOrderButton();
+		addaddress.clickOnPlaceOrderButton();
 	}
 	
 	@Test(priority = 6)

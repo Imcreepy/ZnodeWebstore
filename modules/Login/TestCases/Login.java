@@ -1,14 +1,11 @@
 package Login.TestCases;
 
-import java.util.HashMap;
 import java.util.Map;
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Classes.TestBaseClass;
 import Login.TestMethods.LoginPage;
-import common.BrowserFunctionality;
 import common.GlobalVariables;
 import driver.DriverManager;
 
@@ -38,6 +35,6 @@ public class Login extends TestBaseClass
 	{
 		mapdatafile = setDataFile(GlobalVariables.loginPageDataFilePath, GlobalVariables.LoginCredentials);
 		
-		loginPage.login(mapdatafile.get("StoreUser"), mapdatafile.get("StoreUserPassword"));
+		loginPage.login(getValueOf("StoreUser"), getValueOf("StoreUserPassword"));
 	}
 }

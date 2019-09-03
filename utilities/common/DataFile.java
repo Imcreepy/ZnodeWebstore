@@ -93,39 +93,31 @@ public class DataFile
 			} // End of else condition
 		}// End of for loop
 	}
-}// End of class
 
-
-
-//	public String getData(String key)
-//	{
-//		try 
-//		{
-//			 return dataMap.get(key);
-//		} 
-//		
-//	
-//		catch (NullPointerException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return "";
-//		}
-//		
-//		catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			return "";
-//		}
+	public String getData(String key)
+	{
+		try 
+		{
+			 return dataMap.get(key);
+		} 
 		
-//		finally
-//		{
-//			try {
-//				workbook.close();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
+		catch (NullPointerException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
+		
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "";
+		}
+	}
+}// End of class
+		
+
 
 
 

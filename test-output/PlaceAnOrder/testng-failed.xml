@@ -1,34 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [PlaceAnOrder]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="add-product-to-cart(failed)">
+  <test thread-count="5" name="click-on-shopping-cart(failed)">
     <classes>
-      <class name="PDP.TestCases.AddProductToCart">
+      <class name="testcases.ClickOnShoppingCartLink">
         <methods>
-          <include name="addAProductToCart"/>
-          <include name="initializePDPPage"/>
+          <include name="goToShoppingCart"/>
         </methods>
-      </class> <!-- PDP.TestCases.AddProductToCart -->
+      </class> <!-- testcases.ClickOnShoppingCartLink -->
     </classes>
-  </test> <!-- add-product-to-cart(failed) -->
-  <test thread-count="5" name="click-on-checkout-page(failed)">
-    <classes>
-      <class name="testcases.ClickOnCheckoutLink">
-        <methods>
-          <include name="goToCheckoutPage"/>
-        </methods>
-      </class> <!-- testcases.ClickOnCheckoutLink -->
-    </classes>
-  </test> <!-- click-on-checkout-page(failed) -->
+  </test> <!-- click-on-shopping-cart(failed) -->
   <test thread-count="5" name="checkout(failed)">
     <classes>
       <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
         <methods>
           <include name="initiateCheckoutPage"/>
-          <include name="selectShippingOption"/>
-          <include name="clickOnPlaceOrder"/>
           <include name="clickOnContinueShopping"/>
-          <include name="enterPaymentDetails"/>
           <include name="selectPaymentOption"/>
           <include name="initiatedDriver"/>
         </methods>

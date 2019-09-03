@@ -37,10 +37,10 @@ public class TestBaseClass
 		return file.dataFile(filePath, sheetName);
 	}
 
-//	protected String getData(String key)
-//	{
-//		return file.getData(key);
-//	}
+	protected String getValueOf(String key)
+	{
+		return file.getData(key);
+	}
 	
 	protected void setText(WebElement element, String inputText)
 	{
@@ -51,9 +51,7 @@ public class TestBaseClass
 	
 	protected void clickAndWait(WebElement element)
 	{
-		Click click = new Click();
-		
-		click.clickAndWait(element);
+		Click.clickAndWait(element);
 	}
 	
 	protected void pressTabKey(WebElement element)
