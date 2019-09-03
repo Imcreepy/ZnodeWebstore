@@ -4,7 +4,6 @@ import java.util.Map;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.BeforeClass;
-import Classes.CheckOutBaseClass;
 import Classes.TestBaseClass;
 import common.GlobalVariables;
 import common.MyWait;
@@ -45,12 +44,12 @@ public class PaymentOption extends TestBaseClass
 	@FindBy(xpath = "//input[@data-test-selector='txtCredidCardCVCNumber']")
 	private WebElement txtCreditCardCVVNumber;
 	
-	Map<String, String> mapdatafile;
+	Map<String, String> paymentOption;
 	
 	@BeforeClass
 	private void initializeDataFile()
 	{
-		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
+		paymentOption = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
 	}
 	
 	public void selectPaymentOption(String paymentOption)

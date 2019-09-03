@@ -6,13 +6,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Classes.TestBaseClass;
 import OrderReceipt.TestMethods.OrderReceipt;
+import common.DataFile;
 import common.GlobalVariables;
 import CheckoutPage.TestMethods.AddAddress;
 import CheckoutPage.TestMethods.PaymentOption;
 import CheckoutPage.TestMethods.ShippingOption;
 import driver.DriverManager;
 
-public class AddDetailsOnCheckoutPage extends TestBaseClass
+public class AddDetailsOnCheckoutPage extends DataFile
 {
 	AddAddress addaddress;
 	
@@ -22,7 +23,9 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	
 	OrderReceipt orderreceipt;
 	
-	Map<String, String> mapdatafile;
+	Map<String, String> mapPaymentOptionSheet;
+	
+	Map<String, String> mapCreditCardDetailsSheet;
 
 	@BeforeClass
 	private void initiateCheckoutPage()
@@ -34,6 +37,10 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 		shippingoption = PageFactory.initElements(DriverManager.getDriver().webDriver, ShippingOption.class);
 		
 		orderreceipt = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
+		
+		mapPaymentOptionSheet = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
+		
+		mapCreditCardDetailsSheet = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.CreditCardDetailsSheet);
 	}
 	
 	@Test(priority = 1)
@@ -51,16 +58,12 @@ public class AddDetailsOnCheckoutPage extends TestBaseClass
 	@Test(priority = 3)
 	private void selectPaymentOption()
 	{
-		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
-		
 		paymentoption.selectPaymentOption(getValueOf("Payflow"));
 	} 
 	
 	@Test(priority = 4)
 	private void enterPaymentDetails()
 	{
-		mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.CreditCardDetailsSheet);
-		
 		String visaExpDate = getValueOf("VisaCardExpDate").substring(0, getValueOf("VisaCardExpDate").indexOf("."));
 		String visaExpYear = getValueOf("VisaCardExpYear").substring(0, getValueOf("VisaCardExpYear").indexOf("."));
 		String visaCVVNo = getValueOf("VisaCardCVVNumber").substring(0, getValueOf("VisaCardCVVNumber").indexOf("."));

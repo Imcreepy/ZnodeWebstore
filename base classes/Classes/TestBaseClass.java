@@ -32,14 +32,14 @@ public class TestBaseClass
 	
 	DataFile file = new DataFile();
 	
-	protected Map<String, String> setDataFile(String filePath, String sheetName)
+	protected Map<String, String> mapDataFile(String filePath, String sheetName)
 	{
-		return file.dataFile(filePath, sheetName);
+		return file.mapDataFile(filePath, sheetName);
 	}
 
 	protected String getValueOf(String key)
 	{
-		return file.getData(key);
+		return file.getValueOf(key);
 	}
 	
 	protected void setText(WebElement element, String inputText)

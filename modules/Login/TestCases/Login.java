@@ -6,20 +6,23 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Classes.TestBaseClass;
 import Login.TestMethods.LoginPage;
+import common.DataFile;
 import common.GlobalVariables;
 import driver.DriverManager;
 
 
-public class Login extends TestBaseClass
+public class Login extends DataFile
 {
 	LoginPage loginPage;
 	
-	Map<String, String> mapdatafile;
+	Map<String, String> loginCredentials;
 	
 	@BeforeClass
 	public void initiateLoginPage()
 	{
 		loginPage = PageFactory.initElements(DriverManager.getDriver().webDriver, LoginPage.class);
+		
+		loginCredentials = mapDataFile(GlobalVariables.loginPageDataFilePath, GlobalVariables.LoginCredentials);
 		
 //		dataFilePath = loadPropertyFile("config.properties").get("loginPageDataFilePath");
 	}
@@ -33,8 +36,6 @@ public class Login extends TestBaseClass
 	@Test(priority=1)	
 	public void enterLoginCredentials()
 	{
-		mapdatafile = setDataFile(GlobalVariables.loginPageDataFilePath, GlobalVariables.LoginCredentials);
-		
 		loginPage.login(getValueOf("StoreUser"), getValueOf("StoreUserPassword"));
 	}
 }

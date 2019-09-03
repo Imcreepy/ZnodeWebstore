@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.BeforeClass;
+
 import Classes.TestBaseClass;
 import common.SelectOption;
 import common.GlobalVariables;
@@ -12,8 +14,7 @@ import common.GlobalVariables;
 
 public class AddAddress extends TestBaseClass 
 {
-	Map<String, String> mapdatafile;
-	
+
 	@FindBy(xpath = "//input[@data-test-selector='txtAddressFirstname']")
 	 private WebElement txtAddressFirstname;
 	
@@ -76,13 +77,18 @@ public class AddAddress extends TestBaseClass
 	
 	
 	// End of private WebElements initialization
+	Map<String, String> mapdatafile;
+	
+	@BeforeClass
+	private void initialization()
+	{
+		mapdatafile = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.AddressSheet);
+	}
 	
 	public void addShippingAddrForRegUser()
 	{
 		try
 		{
-			mapdatafile = setDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.AddressSheet);
-			
 			if (displayName.isDisplayed())
 			{
 				setText(displayName, getValueOf("ShippingDisplayName"));
