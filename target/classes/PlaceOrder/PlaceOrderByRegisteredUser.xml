@@ -26,7 +26,11 @@
  
  <test name="remove-cart-items">	
 	  	<classes>
+<<<<<<< HEAD
 	  		<class name="ShoppingCart.TestCases.RemoveItemsFromCart"/>	
+=======
+	  		<class name="testcases.RemoveAllItemsFromCart"/>	
+>>>>>>> fb5cf243d2db9ab19daca501b9b94d2374ba071e
 	    </classes>
  </test>
  
@@ -41,7 +45,23 @@
 	  		<class name="PDP.TestCases.AddProductToCart"/>	
 	    </classes>
  </test>
+<<<<<<< HEAD
 
+=======
+ 
+ <test name="click-on-shopping-cart">	
+	  	<classes>
+	  		<class name="testcases.ClickOnShoppingCartLink"/>	
+	    </classes>
+ </test>
+ 
+ <test name="click-on-checkout-page">	
+	  	<classes>
+	  		<class name="testcases.ClickOnCheckoutLink"/>	
+	    </classes>
+ </test>
+ 
+>>>>>>> fb5cf243d2db9ab19daca501b9b94d2374ba071e
   <test name="checkout">	
 	  	<classes>
 	  		<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	

@@ -1,11 +1,10 @@
 package Classes;
 
 import java.util.Map;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
+
 import common.Click;
 import common.DataFile;
 import common.PropertyFile;
@@ -38,19 +37,16 @@ public class TestBaseClass
 		return file.mapDataFile(filePath, sheetName);
 	}
 
-//	protected String getValueOf(String key)
-//	{
-//		return file.getValueOf(key);
-//	}
+	protected String getValueOf(String key)
+	{
+		return file.getValueOf(key);
+	}
 	
 	protected void setText(WebElement element, String inputText)
 	{
-//		scrollToElement(element);
-		
-//		element.clear();
+		scrollToElement(element);
 		
 		SendKeys.setText(element, inputText);
-//		element.sendKeys(inputText);
 	}
 	
 	protected void clickAndWait(WebElement element)
@@ -77,13 +73,5 @@ public class TestBaseClass
 	{
 		VerifyElementStatus.isElementNotVisible(element);
 	}
-	
-	
-//	protected <T> Logger configureLogger(Class<T> className)
-//	{
-//		Logger logger = Logger.getLogger(className);
-//		
-//		return logger;
-//	}
 } // End of class
 

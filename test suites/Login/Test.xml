@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="poc" parallel="tests" thread-count="1" >
+
+<!-- This test scenario coverage is for the Chrome driver -->
+	<test name="pim module Chrome">
+		<parameter name ="Browser" value="Chrome"/>
+		<parameter name="Environment" value ="qa"/>	
+		<packages>
+			<package name="driver"/>
+		</packages>
+		<classes>
+			<class name="Login.TestCases.Login"/>
+			<class name="testcases.RemoveAllItemsFromCart"/>
+			<class name="HomePage.TestCases.NavigateToPDPPage"/>
+			<class name="PDP.TestCases.AddProductToCart"/>	
+			<class name="testcases.ClickOnShoppingCartLink"/>
+			<class name="testcases.ClickOnCheckoutLink"/>	
+			<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
+		</classes>
+	</test>		
+	
+	
+<!-- This test scenario coverage is for the Firefox driver -->
+	<test name="pim module firefox">
+		<parameter name ="Browser" value="firefox"/>
+		<parameter name="Environment" value ="qa"/>	
+		<packages>
+			<package name="driver"/>
+		</packages>
+		<classes>
+			<class name="testcases.RemoveAllItemsFromCart"/>
+			<class name="HomePage.TestCases.NavigateToPDPPage"/>
+			<class name="PDP.TestCases.AddProductToCart"/>	
+			<class name="testcases.ClickOnShoppingCartLink"/>
+		</classes>
+	</test>		
+	
+</suite>

@@ -2,12 +2,10 @@ package testmethods;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import common.Click;
 import common.VerifyElementStatus;
 
-public class Navigate extends Click
-{
+public class Navigate extends Click{
 
 	@FindBy(xpath = "//i[@data-test-selector='linkCart']")
 	private WebElement linkCart;

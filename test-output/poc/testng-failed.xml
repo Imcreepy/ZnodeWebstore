@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [poc]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="tests" name="pim module Chrome(failed)">
+    <parameter name="Environment" value="qa"/>
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="testcases.ClickOnCheckoutLink">
+        <methods>
+          <include name="goToCheckoutPage"/>
+        </methods>
+      </class> <!-- testcases.ClickOnCheckoutLink -->
+      <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
+        <methods>
+          <include name="initiateCheckoutPage"/>
+          <include name="selectShippingOption"/>
+          <include name="clickOnPlaceOrder"/>
+          <include name="clickOnContinueShopping"/>
+          <include name="enterPaymentDetails"/>
+          <include name="selectPaymentOption"/>
+          <include name="initiatedDriver"/>
+        </methods>
+      </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
+      <class name="Login.TestCases.Login">
+        <methods>
+          <include name="enterLoginCredentials"/>
+          <include name="initiateLoginPage"/>
+          <include name="initiatedDriver"/>
+        </methods>
+      </class> <!-- Login.TestCases.Login -->
+    </classes>
+  </test> <!-- pim module Chrome(failed) -->
+</suite> <!-- Failed suite [poc] -->

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PlaceAnOrder">
+<!--  	The test for all the user log-in till landing page -->
+
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+  
+<test name="open-browser">	
+		<parameter name ="Browser" value="chrome"/>
+		<parameter name="Environment" value ="qa"/>	
+		<packages>
+			<package name="driver"/>
+		</packages>
+</test>
+ 
+ <test name="log-in">
+	  	<classes>
+	  		<class name="Login.TestCases.Login"/>
+	    </classes>
+ </test>
+ 
+ <test name="remove-cart-items">	
+	  	<classes>
+<<<<<<< HEAD:Test Suites/PlaceOrder/PlaceOrderByRegisteredUser.xml
+	  		<class name="ShoppingCart.TestCases.RemoveItemsFromCart"/>	
+=======
+	  		<class name="testcases.RemoveAllItemsFromCart"/>	
+>>>>>>> fb5cf243d2db9ab19daca501b9b94d2374ba071e:test suites/PlaceOrder/PlaceOrderByRegisteredUser.xml
+	    </classes>
+ </test>
+ 
+ <test name="navigate-to-PDP">	
+	  	<classes>
+	  		<class name="HomePage.TestCases.NavigateToPDPPage"/>	
+	    </classes>
+ </test>
+ 
+ <test name="add-product-to-cart">	
+	  	<classes>
+	  		<class name="PDP.TestCases.AddProductToCart"/>	
+	    </classes>
+ </test>
+<<<<<<< HEAD:Test Suites/PlaceOrder/PlaceOrderByRegisteredUser.xml
+
+=======
+ 
+ <test name="click-on-shopping-cart">	
+	  	<classes>
+	  		<class name="testcases.ClickOnShoppingCartLink"/>	
+	    </classes>
+ </test>
+ 
+ <test name="click-on-checkout-page">	
+	  	<classes>
+	  		<class name="testcases.ClickOnCheckoutLink"/>	
+	    </classes>
+ </test>
+ 
+>>>>>>> fb5cf243d2db9ab19daca501b9b94d2374ba071e:test suites/PlaceOrder/PlaceOrderByRegisteredUser.xml
+  <test name="checkout">	
+	  	<classes>
+	  		<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
+	    </classes>
+ </test>
+ 
+ </suite>
