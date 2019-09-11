@@ -5,7 +5,14 @@
     <classes>
       <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
         <methods>
+          <include name="initiateCheckoutPage"/>
           <include name="addShippingAddress"/>
+          <include name="selectShippingOption"/>
+          <include name="clickOnPlaceOrder"/>
+          <include name="clickOnContinueShopping"/>
+          <include name="enterPaymentDetails"/>
+          <include name="selectPaymentOption"/>
+          <include name="initiatedDriver"/>
         </methods>
       </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
     </classes>

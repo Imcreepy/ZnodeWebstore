@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [PlaceAnOrder]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="click-on-shopping-cart(failed)">
-    <classes>
-      <class name="TestCases.ClickOnShoppingCartLink">
-        <methods>
-          <include name="goToShoppingCart"/>
-        </methods>
-      </class> <!-- TestCases.ClickOnShoppingCartLink -->
-    </classes>
-  </test> <!-- click-on-shopping-cart(failed) -->
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PlaceAnOrder]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
   <test thread-count="5" name="checkout(failed)">
     <classes>
       <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage">
         <methods>
           <include name="initiateCheckoutPage"/>
-          <include name="selectShippingOption"/>
           <include name="clickOnContinueShopping"/>
-          <include name="initiatedDriver"/>
         </methods>
       </class> <!-- CheckoutPage.TestCases.AddDetailsOnCheckoutPage -->
     </classes>
