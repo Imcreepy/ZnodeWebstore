@@ -1,25 +1,50 @@
 package CreateAnAccount.TestMethods;
 
-import Classes.CreateAnAccountBaseClass;
-import common.Click;
-import common.VerifyElementStatus;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import Classes.TestBaseClass;
 
-public class CreateAnAccount extends CreateAnAccountBaseClass
+public class CreateAnAccount extends TestBaseClass
 {	
+	@FindBy(xpath = "//a[@data-test-selector='linkLoginLink']")
+	@CacheLookup
+	private WebElement linkLogin;
+	
+	@FindBy(xpath = "//a[@data-test-selector='btnGetAnAccount']")
+	@CacheLookup
+	private WebElement linkGetAnAccount;
+	
+	@FindBy(xpath = "//input[@data-test-selector='txtUsername']")
+	@CacheLookup
+	private WebElement txtUsername;
+	
+	@FindBy(xpath = "//input[@id='Password']")
+	@CacheLookup
+	private WebElement txtPassword;
+	
+	@FindBy(xpath = "//input[@id='ReTypePassword']")
+	@CacheLookup
+	private WebElement txtReTypePassword;
+	
+	@FindBy(xpath = "//button[@id='user-register']")
+	@CacheLookup
+	private WebElement btnCreateAccount;
+	
 	public void createNewAccount(String userName, String password)
 	{
 //		Click.clickAndWait(linkLogin);
 		
-		Click.clickAndWait(linkGetAnAccount);
+		clickAndWait(linkGetAnAccount);
 		
-		VerifyElementStatus.isElementVisible(txtUsername);
+		waitForElementToBeVisible(txtUsername);
 		
-		txtUsername.sendKeys(userName);
+		setText(txtUsername, userName);
 		
-		txtPassword.sendKeys(password);
+		setText(txtPassword, password);
 		
-		txtReTypePassword.sendKeys(password);
+		setText(txtReTypePassword, password);
 		
-		Click.clickAndWait(btnCreateAccount);
+		clickAndWait(btnCreateAccount);
 	}
 }

@@ -1,11 +1,14 @@
 package driver;
 
-import java.util.Properties;
+import java.util.Map;
 
+import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -19,20 +22,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverClass {
 
-	public RemoteWebDriver webDriver; 
-	private final static String webstoreQAUrl = getProperty("config.properties", "webstoreQAUrl");
-	private final static String webstoreautomationUrl = getProperty("config.properties", "webstoreautomationUrl");
+	PropertyFile file = new PropertyFile();
+	
+	Map<String, String> propertyFile = file.loadPropertyFile("config.properties");
 
-	private static String getProperty(String propFileName, String getProperty)
-	{
-		String dataFilePath;
-		
-		Properties prop = PropertyFile.loadPropertyFile(propFileName);
-		
-		dataFilePath = prop.getProperty(getProperty);
-		
-		return dataFilePath;
-	}
+	public RemoteWebDriver webDriver; 
+	private final String webstoreQAUrl = propertyFile.get("webstoreQAUrl");
+	private final String webstoreAutomationUrl = propertyFile.get("webstoreautomationUrl");
+
 	
 	// Method that will execute before all the execution to setup all the drivers
 	@BeforeSuite
@@ -66,7 +63,7 @@ public class DriverClass {
 		switch(environment.toLowerCase())
 		{
 			case "automation":
-				webDriver.get(webstoreautomationUrl);
+				webDriver.get(webstoreAutomationUrl);
 				break;
 			case "qa":
 				webDriver.get(webstoreQAUrl);
@@ -81,6 +78,19 @@ public class DriverClass {
         DriverManager.setDriver(driver);
 		// maximizing the Browser
 		BrowserFunctionality.maximizeBrowser();
+		BasicConfigurator.configure();
 		
 	}// End of openBrowser Method
+	
+	@AfterClass
+	public void newLine()
+	{
+		System.out.println();
+	}
+	@AfterSuite
+	//Test cleanup
+	public void TeardownTest()
+	{
+		DriverManager.getDriver().webDriver.quit();
+	}
 }// End of Driver Class

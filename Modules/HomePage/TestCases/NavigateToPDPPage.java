@@ -7,30 +7,30 @@ import HomePage.TestMethods.HomePage;
 import driver.DriverManager;
 import testmethods.Search;
 
-
 public class NavigateToPDPPage {
 
-	HomePage home;
+	HomePage homepage;
 	
 	Search search;
 	
 	@BeforeClass
-	private void initiatePDPPage()
+	@Test( groups= {"checkoutAsGuest"})
+	private void initiateHomePage()
 	{
 		search = PageFactory.initElements(DriverManager.getDriver().webDriver, Search.class);
 		
-		home = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
+		homepage = PageFactory.initElements(DriverManager.getDriver().webDriver, HomePage.class);
 	}
 	
-	@Test(priority=0)
+	@Test(priority = 1, groups= {"checkoutAsGuest"})
 	private void searchForProduct()
 	{
-		search.searchProduct("Cherries");
+		search.searchProduct("AS 1011A034_021_090D");
 	}
 	
-	@Test(priority=1)
+	@Test(priority = 2, groups= {"checkoutAsGuest"})
 	private void clickOnAProductImage()
 	{
-		home.ClickOnProductImage();
+		homepage.ClickOnProductImage();
 	}
 }

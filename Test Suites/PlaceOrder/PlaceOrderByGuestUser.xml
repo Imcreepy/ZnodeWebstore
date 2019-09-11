@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="PlaceAnOrder">
+<!--  	The test for placing an order by guest user -->
+
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+  
+<test name="open-browser">	
+		<parameter name ="Browser" value="chrome"/>
+		<parameter name="Environment" value ="qa"/>	
+		<packages>
+			<package name="driver"/>
+		</packages>
+</test>
+ 
+ <test name="navigate-to-PDP">	
+ 	<groups>
+ 		<run>
+ 			<include name="checkoutAsGuest"></include>
+ 		</run>
+ 	</groups>
+	  	<classes>
+	  		<class name="HomePage.TestCases.NavigateToPDPPage"/>	
+	    </classes>
+ </test>
+ 
+ <test name="add-product-to-cart">	
+ <groups>
+ 		<run>
+ 			<include name="checkoutAsGuest"></include>
+ 		</run>
+ 	</groups>
+	  	<classes>
+	  		 <class name="PDP.TestCases.AddProductToCart"/>		
+	    </classes>
+ </test>
+ 
+ <test name="checkout-as-guest">
+ <groups>
+ 		<run>
+ 			<include name="checkoutAsGuest"></include>
+ 		</run>
+ 	</groups>
+	  	<classes>
+	  		<class name="Login.TestCases.Login"/>
+	    </classes>
+ </test>
+ 
+  <test name="checkout">	
+  <groups>
+ 		<run>
+ 			<include name="checkoutAsGuest"></include>
+ 		</run>
+ 	</groups>
+	  	<classes>
+	  		 <class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
+	    </classes>
+ </test>
+ 
+
+	  			
+ 
+ <!-- <test name="add-product-to-cart">	
+	  	<classes>
+	  		<class name="PDP.TestCases.AddProductToCart"/>	
+	    </classes>
+ </test>
+
+  <test name="checkout">	
+	  	<classes>
+	  		<class name="CheckoutPage.TestCases.AddDetailsOnCheckoutPage"/>	
+	    </classes>
+ </test> -->
+ </suite>

@@ -1,16 +1,18 @@
 package OrderReceipt.TestMethods;
 
-import Classes.OrderReceiptBaseClass;
-import common.Click;
-import common.MyWait;
-import common.VerifyElementStatus;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import Classes.TestBaseClass;
 
-public class OrderReceipt extends OrderReceiptBaseClass
+public class OrderReceipt extends TestBaseClass
 {
+	@FindBy(xpath = "//a[text()='Continue shopping']")
+	protected WebElement linkContinueShopping;
+	
 	public void clickOnContinueShopping()
 	{	
-		MyWait.waitTill("long", "isvisible", linkContinueShopping);
+		waitForElementToBeVisible(linkContinueShopping);
 		
-		Click.clickAndWait(linkContinueShopping);	
+		clickAndWait(linkContinueShopping);	
 	}
 }

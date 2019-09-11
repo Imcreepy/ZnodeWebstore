@@ -89,10 +89,13 @@ public class MyWait {
 		{
 			case "isvisible":
 				wait.until(ExpectedConditions.visibilityOf(element));
+				break;
 			case "isnotvisible":
 				wait.until(ExpectedConditions.invisibilityOf(element));
+				break;
 			case "isclickable":
 				wait.until(ExpectedConditions.elementToBeClickable(element));
+				break;
 			default:
 				wait.until(ExpectedConditions.visibilityOf(element));
 		}

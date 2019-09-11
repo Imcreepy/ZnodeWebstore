@@ -1,15 +1,20 @@
 package HomePage.TestMethods;
 
-import Classes.HomePageBaseClass;
-import common.Click;
-import common.VerifyElementStatus;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends HomePageBaseClass
+import Classes.HomePageBaseClass;
+import Classes.TestBaseClass;
+
+public class HomePage extends TestBaseClass
 {
+	@FindBy(xpath = "//img[@data-test-selector='imgProductImage']")
+	private WebElement imgProduct;
+	
 	public void ClickOnProductImage()
 	{
-		VerifyElementStatus.isElementVisible(imgProduct);
+		waitForElementToBeVisible(imgProduct);
 		
-		Click.clickAndWait(imgProduct);
+		clickAndWait(imgProduct);
 	}
 }

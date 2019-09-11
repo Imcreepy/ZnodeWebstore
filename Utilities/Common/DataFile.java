@@ -4,127 +4,122 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class DataFile {
-
-	static Sheet sheet;
-	static Row row;
-	private static Workbook workbook;
+public class DataFile 
+{
+	Sheet sheet;
+	int lastRow;
+	private Workbook workbook;
 	int colNum = 0;
 	
-	public void dataFile(String filePath, String sheetName)
+	Map<String, String> dataMap;
+	
+	public Map<String, String> mapDataFile(String filePath, String sheetName)
 	{
+		dataMap = new HashMap<String, String>();
 		
 		String pathTillProject = System.getProperty("user.dir");
 		
 		FileInputStream fis;
 		
-		try {
-				File file = new File(pathTillProject + filePath);
+		try 
+		{
+			File file = new File(pathTillProject + filePath);
+		
+			fis = new FileInputStream(file);
 			
-				fis = new FileInputStream(file);
-				
-				if (file.getName().endsWith(".xls"))
-				{
-				//If it is xlsx file then create object of XSSFWorkbook class
-					workbook = new HSSFWorkbook(fis);
-				}
-				
-				else if (file.getName().endsWith(".xlsx"))
-				{
-					workbook = new XSSFWorkbook(fis);
-				}
-					
-				sheet = workbook.getSheet(sheetName);
-					
-				row = sheet.getRow(0);
+			if (file.getName().endsWith(".xls"))
+			{
+				//If it is xlsx file then create object of HSSFWorkbook class
+				workbook = new HSSFWorkbook(fis);
 			}
-		
-		catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			else if (file.getName().endsWith(".xlsx"))
+			{
+				//If it is xlsx file then create object of XSSFWorkbook class
+				workbook = new XSSFWorkbook(fis);
+			}
+				
+			sheet = workbook.getSheet(sheetName);
+				
+			lastRow = sheet.getLastRowNum();
+			
+			putDataInHashMap();	
+		}
+	
+		catch (NullPointerException ex) 
+		{
+			ex.printStackTrace();
 		}
 		
-		catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		catch (FileNotFoundException ex) 
+		{
+			ex.printStackTrace();
 		}
+		
+		catch (IOException ex) 
+		{
+			ex.printStackTrace();
+		}
+		
+		//Returning dataMap
+		return dataMap;
 	}
 
-	
-	public String getData(String rowName, String columnName)
+	private void putDataInHashMap()
 	{
-		try {
-				int row_num = -1;
-				int column_num = -1;
-				
-				int noOfRows = sheet.getPhysicalNumberOfRows();
-				int noOfColumns = row.getLastCellNum();
-				
-			    for(int i=0; i < noOfRows; i++)
-			    {
-			        if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(rowName))
-			        {
-			           row_num = i;
-			           break;
-			        }
-			    }
-		        
-		        for(int j=0; j < noOfColumns; j++)
-		        {
-		        	Cell cell = row.getCell(j);
-		        	if (cell == null || cell.getCellType() == Cell.CELL_TYPE_BLANK) {
-		        	       // Can't be this cell - it's empty
-		        	       continue;
-		        	   }
-		        	   if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
-		        	      String text = cell.getStringCellValue();
-		        	      if (columnName.equals(text)) {
-		        	    	  column_num = j;
-		        	         break;
-		        	      }
-		        	   }
-		        }	
-		        
-		        DataFormatter formatter = new DataFormatter();
-		        
-		        String cellText = formatter.formatCellValue(sheet.getRow(row_num).getCell(column_num));
-		    		
-		        return cellText;
-		} 
-		
+		 //Looping over entire row
+		for(int i=1; i <= lastRow; i++)
+		{
+			Row row = sheet.getRow(i);
+			
+			String celldata = row.getCell(0).getStringCellValue();
 	
-		catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return "";
-		}
-		
-		catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return "";
-		}
-		
-//		finally
-//		{
-//			try {
-//				workbook.close();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-
+			if(celldata == null || "".equals(celldata))
+			{
+				continue;
+			} // End of if condition
+			
+			else
+			{
+				dataMap.put(row.getCell(0).toString(), row.getCell(1).toString());			
+			} // End of else condition
+		}// End of for loop
 	}
-}
+
+//	public String getValueOf(String key)
+//	{
+//		try 
+//		{
+//			 return dataMap.get(key);
+//		} 
+//		
+//		catch (NullPointerException e) 
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			return "";
+//		}
+//		
+//		catch (Exception e) 
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			return "";
+//		}
+//	}
+}// End of class
+		
+
+
+
+
+
+

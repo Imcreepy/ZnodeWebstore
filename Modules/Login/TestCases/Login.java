@@ -1,27 +1,28 @@
 package Login.TestCases;
 
+import java.util.Map;
+
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import Classes.TestBaseClass;
+
 import Login.TestMethods.LoginPage;
-import common.BrowserFunctionality;
+import common.DataFile;
+import common.GlobalVariables;
 import driver.DriverManager;
 
-
-public class Login extends TestBaseClass
+public class Login extends DataFile
 {
-
-	LoginPage loginPage = new LoginPage();
+	LoginPage loginPage;
 	
-	String dataFilePath;
+	Map<String, String> loginCredentials;
 	
 	@BeforeClass
 	public void initiateLoginPage()
 	{
-		loginPage = PageFactory.initElements(driver, LoginPage.class);
+		loginPage = PageFactory.initElements(DriverManager.getDriver().webDriver, LoginPage.class);
 		
-		dataFilePath = getProperty("config.properties", "loginPageDataFilePath");
+		loginCredentials = mapDataFile(GlobalVariables.loginPageDataFilePath, GlobalVariables.LoginCredentials);
 	}
 	
 	@Test(priority=0)	
@@ -33,8 +34,12 @@ public class Login extends TestBaseClass
 	@Test(priority=1)	
 	public void enterLoginCredentials()
 	{
-		setDataFile(dataFilePath, "Credentials");
-		
-		loginPage.login(getData("StoreUser", "Username"), getData("StoreUser", "Password"));
+		loginPage.login(loginCredentials.get("StoreUser"), loginCredentials.get("StoreUserPassword"));
+	}
+	
+
+	public void clickOnCheckoutAsGuestLink()
+	{
+		loginPage.clickCheckoutAsGuest();
 	}
 }

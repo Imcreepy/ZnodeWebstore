@@ -4,23 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
-
-import driver.DriverClass;
 import driver.DriverManager;
-
 
 public class Click {
 
-	static Loader loader = new Loader();
 	
 	// To click on respective element and wait until page loads using WebElement
 	public static void clickAndWait(WebElement element)
 	{
 		element.click();
-		
-		 MyWait.waitFor(1, "sec");
 		 
-		loader.waitForPageLoad();
+		Loader.waitForPageLoad();
 	}
 	
 	// To click on respective element and wait until page loads using Locator
@@ -32,7 +26,7 @@ public class Click {
 			
 			element.click();
 			
-			loader.waitForPageLoad();
+			Loader.waitForPageLoad();
 		}
 		
 		catch(ElementClickInterceptedException ex)

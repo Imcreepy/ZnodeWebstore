@@ -12,7 +12,7 @@ import driver.DriverManager;
 
 public class VerifyElementStatus {
 
-	static WebDriverWait wait = new WebDriverWait(DriverManager.getDriver().webDriver, GlobalVariables.delayHigh);
+	static WebDriverWait wait = new WebDriverWait(DriverManager.getDriver().webDriver, GlobalVariables.pageLoadingTime);
 	
 	// To verify that element is present on web page using locator
 	public static void isElementPresent(String condition, String locator)

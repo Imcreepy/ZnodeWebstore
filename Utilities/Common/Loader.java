@@ -2,37 +2,39 @@ package common;
 
 import java.util.NoSuchElementException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import driver.DriverManager;
 
 public class Loader {
 
-	@FindBy(xpath = "//*[@id='loading']")
-	private WebElement backgroundLoader;
+//	@FindBy(xpath = "//*[@id='loader-content-backdrop']")
+//	private static WebElement backgroundLoader;
 	
-	JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver().webDriver;
+	static int waitTime = 100;
 	
-	public void waitForPageLoad()
+	static JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriver().webDriver;
+	
+	public static void waitForPageLoad()
 	{
 		try 
 		{
-			for(int index=0;index<40;index++) 
+			for(int loadTime = 0; loadTime < 100; loadTime++) 
 			{
-				String loader= (String) js.executeScript("return $('#loading').attr('style')");
+				long loader = (long) js.executeScript("return $('#loader-content-backdrop').length");
 				
-				if(loader=="display: none;") 
+				String singleLoader = (String) js.executeScript("return $('#Single-loader-content-backdrop').attr('style')");
+				
+				if(loader == 0 && singleLoader.equalsIgnoreCase("display: none;")) 
 				{
 					break;
 				}
 				
 				else
 				{
-					MyWait.waitFor(1, "sec");
+//					MyWait.waitFor(waitTime, "mili");
+					Thread.sleep(waitTime);
 				}
 			}
-//			MyWait.waitTill("short", "isvisible", backgroundLoader);
 		}
 	
 		catch(NullPointerException ex)

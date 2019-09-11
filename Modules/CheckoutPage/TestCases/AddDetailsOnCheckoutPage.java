@@ -1,70 +1,80 @@
 package CheckoutPage.TestCases;
 
-
+import java.util.Map;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import Classes.TestBaseClass;
 import OrderReceipt.TestMethods.OrderReceipt;
-import CheckoutPage.TestMethods.CheckOutPage;
+import common.DataFile;
+import common.GlobalVariables;
+import CheckoutPage.TestMethods.AddAddress;
+import CheckoutPage.TestMethods.PaymentOption;
+import CheckoutPage.TestMethods.ShippingOption;
 import driver.DriverManager;
 
-public class AddDetailsOnCheckoutPage extends TestBaseClass
+public class AddDetailsOnCheckoutPage extends DataFile
 {
-	CheckOutPage checkoutpage;
+	AddAddress addaddress;
+	
+	PaymentOption paymentoption;
+	
+	ShippingOption shippingoption;
 	
 	OrderReceipt orderreceipt;
 	
-	String dataFilePath;
+	Map<String, String> paymentOption = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.PaymentOptionsSheet);
 	
+	Map<String, String> creditCardDetails = mapDataFile(GlobalVariables.CheckoutPageDataFilePath, GlobalVariables.CreditCardDetailsSheet);
+
 	@BeforeClass
+	@Test (groups= {"checkoutAsGuest"})
 	private void initiateCheckoutPage()
 	{
-		checkoutpage = PageFactory.initElements(DriverManager.getDriver().webDriver, CheckOutPage.class);
+		addaddress = PageFactory.initElements(DriverManager.getDriver().webDriver, AddAddress.class);
+		
+		paymentoption = PageFactory.initElements(DriverManager.getDriver().webDriver, PaymentOption.class);
+		
+		shippingoption = PageFactory.initElements(DriverManager.getDriver().webDriver, ShippingOption.class);
 		
 		orderreceipt = PageFactory.initElements(DriverManager.getDriver().webDriver, OrderReceipt.class);
-		
-		dataFilePath = getProperty("config.properties", "checkoutPageDataFilePath");
 	}
 	
-	@Test(priority = 1)
+	@Test(priority=1, groups= {"checkoutAsGuest"})
 	private void addShippingAddress()
 	{
-		checkoutpage.addShippingAddrForRegUser();
+		addaddress.addShippingAddrForRegUser();
 	}
 	
-	@Test(priority = 2)
+	@Test(priority=2, groups= {"checkoutAsGuest"})
 	private void selectShippingOption()
 	{
-		checkoutpage.selectShippingOption();
+		shippingoption.selectShippingOption();
 	} 
 	
-	@Test(priority = 3)
+	@Test(priority=3, groups= {"checkoutAsGuest"})
 	private void selectPaymentOption()
 	{
-		setDataFile(dataFilePath, "PaymentOptions");
-		
-		checkoutpage.selectPaymentOption(getData("Braintree", "Options"));
+		paymentoption.selectPaymentOption(paymentOption.get("Payflow"));
 	} 
 	
-	@Test(priority = 4)
-	void enterPaymentDetails()
+	@Test(priority=4, groups= {"checkoutAsGuest"})
+	private void enterPaymentDetails()
 	{
-		setDataFile(dataFilePath, "CreditCardDetails");
+		String visaExpDate = creditCardDetails.get("VisaCardExpDate").substring(0, creditCardDetails.get("VisaCardExpDate").indexOf("."));
+		String visaExpYear = creditCardDetails.get("VisaCardExpYear").substring(0, creditCardDetails.get("VisaCardExpYear").indexOf("."));
+		String visaCVVNo = creditCardDetails.get("VisaCardCVVNumber").substring(0, creditCardDetails.get("VisaCardCVVNumber").indexOf("."));
 		
-		checkoutpage.addPaymentDetails(getData("Visa", "CreditCardType"), getData("Visa", "CardHolderName"), 
-		getData("Visa", "CardNumber"), getData("Visa", "CardExpDate"), getData("Visa", "CardExpYear"), 
-		getData("Visa", "CardCVVNumber"));
+		paymentoption.addPaymentDetails(creditCardDetails.get("VisaCreditCardType"), creditCardDetails.get("VisaCardHolderName"), 
+				creditCardDetails.get("VisaCardNumber"), visaExpDate, visaExpYear, visaCVVNo);
 	} 
 	
-	
-	@Test(priority = 5)
+	@Test(priority=5, groups= {"checkoutAsGuest"})
 	private void clickOnPlaceOrder()
 	{
-		checkoutpage.clickOnPlaceOrderButton();
+		addaddress.clickOnPlaceOrderButton();
 	}
 	
-	@Test(priority = 6)
+	@Test(priority=6, groups= {"checkoutAsGuest"})
 	private void clickOnContinueShopping()
 	{
 		orderreceipt.clickOnContinueShopping();
